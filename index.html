@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="A website for the boba lovers of Northern Virginia."/>
+        <meta name="google" content="nositelinkssearchbox"/>
+        <meta name="keywords" content="Boba tea, bubble tea, bubble tea in NOVA, boba in NOVA, boba nova"/>
+        <meta name="author" content="CaRyn Newton"/>        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Montserrat+Alternates&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="novaBT.css">
+        <title>Nova Bubble Tea &#129483; Home</title>
+    </head>
+    <body>
+        <div id="contentContainer">
+            <header>
+                <img src="Nova Bubble Tea v2.png">
+                <p>&copy; CaRyn Newton 2022</p>
+            </header>
+            <div id="searchForm">
+                <p id="searchBox">Enter a zip code, city, or shop name:</p>
+                <input id="searchQuery" placeholder="e.g., Bubble's Boba">
+                <button onclick="searchResults()">Search</button>
+                <p id="results"></p>
+            </div><!--end search form-->
+            <div id="map"></div><!--end map-->
+        </div><!--end content container-->
+        <div id="siteInfo">
+            <p>
+                Welcome to Nova Bubble Tea!<br><br>
+                Nova Bubbla Tea is a site where the bubble/boba tea lovers of Northern Virginia
+                can find their next favorite shop in the area.<br><br>
+                Simply use the map or search box to the left and enter a city, zip code, or shop name to help fulfill your next
+                boba craving.<br><br>
+                Is there a shop that I missed? <a href="mailto:niuniurin@gmail.com">Please let me know</a>, and I will add it as soon as possible :)<br><br>
+                Thank you for visiting!<br><br>
+            </p>
+        </div><!--end site info-->
+
+        <!--start javascript-->
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAkE8s3OkH02_z1xh052-a8TMhaXUbLJE&callback=initMap"></script>
+        <script>
+            var map;
+            let mapDetails = {
+                center:{ lat: 38.84575643258774,lng: -77.30619430989303},
+                zoom:10
+            };
+            var markerArray = [];
+            let shops = [
+                {
+                    shopName:"520 Ice Cream and Tea",  
+                    lat: 38.86998784,      
+                    lng: -77.23089728,
+                    city: "Fairfax",
+                    zip: "22031"
+                },
+                {
+                    shopName:"5T Ice",
+                    lat: 38.9375001600823,
+                    lng: -77.5222773905383,
+                    city: "Dulles",
+                    zip: "20166"
+                },
+                {
+                    shopName:"Argo Tea",
+                    lat: 38.8321694251996,
+                    lng: -77.306778389209,
+                    city: "Fairfax",
+                    zip: "22030"
+                },
+                {
+                    shopName:"Argo Tea",
+                    lat: 38.8350527433599,
+                    lng: -77.3079800187618,
+                    city: "Fairfax",
+                    zip: "22030"
+                },
+                {
+                    shopName:"Bees and Tea by Asia Bistro",
+                    lat: 38.8631918707671,
+                    lng: -77.0629887873384,
+                    city: "Arlington",
+                    zip: "22202"
+                },
+                {
+                    shopName:"Ben Gong's Tea - Annandale",
+                    lat: 38.8310810997249,
+                    lng: -77.1884120341947,
+                    city: "Annandale",
+                    zip: "22003"
+                },
+                {
+                    shopName:"Ben Gong's Tea - Centreville",
+                    lat: 38.8381926231755,
+                    lng: -77.4398033183466,
+                    city: "Centreville",
+                    zip: "20121"
+                },
+                {
+                    shopName:"Bobapop Tea Bar - Merrifield",
+                    lat: 38.8737540086376,
+                    lng: -77.225153162887,
+                    city: "Falls Church",
+                    zip: "22042"
+                },
+                {
+                    shopName:"Breeze Bakery Café",
+                    lat: 38.83358404,
+                    lng: -77.21002415,
+                    city: "Annandale",
+                    zip: "22003"
+                },
+                {
+                    shopName:"Bubble Mochi",
+                    lat: 38.90050645,
+                    lng: -77.2671341433792,
+                    city: "Vienna",
+                    zip: "22180"
+                },
+                {
+                    shopName:"Bubble Tea Station",
+                    lat: 38.7719290295107,
+                    lng: -77.5056905455913,
+                    city: "Manassas",
+                    zip: "20109"
+                },
+                {
+                    shopName:"Bubbleology",
+                    lat: 39.0900283572368,
+                    lng: -77.5248278132953,
+                    city: "Leesburg",
+                    zip: "20175"
+                },
+                {
+                    shopName:"Café Miki",
+                    lat: 38.6352009970873,
+                    lng: -77.2967834635795,
+                    city: "Woodbridge",
+                    zip: "22192"
+                },
+                {
+                    shopName:"Cents Taro Family",
+                    lat: 38.8663117666677,
+                    lng: -77.2748653711073,
+                    city: "Fairfax",
+                    zip: "22031"
+                },
+                {
+                    shopName:"Chill Zone Café",
+                    lat: 38.896696879583,
+                    lng: -77.1387386071683,
+                    city: "Arlington",
+                    zip: "22207"
+                },
+                {
+                    shopName:"Chunky Cup Bubble Tea and Fries",
+                    lat: 38.6786430423673,
+                    lng: -77.359470511346,
+                    city: "Woodbridge",
+                    zip: "22192"
+                },
+                {
+                    shopName:"Empress Pearl Milk Tea",
+                    lat: 39.1377095843293,
+                    lng: -77.703679644457,
+                    city: "Purcellville",
+                    zip: "20132"
+                },
+                {
+                    shopName:"Fortune Cha",
+                    lat: 38.8166869103071,
+                    lng: -77.1424575423828,
+                    city: "Alexandria",
+                    zip: "22312"
+                },
+                {
+                    shopName:"Gong Cha - Rosslyn",
+                    lat: 38.8940336069994,
+                    lng: -77.0777842511886,
+                    city: "Arlington",
+                    zip: "22209"
+                },
+                {
+                    shopName:"Gong Cha - Annandale",
+                    lat: 38.8315102389412,
+                    lng: -77.1970042806781,
+                    city: "Annandale",
+                    zip: "22003"
+                },
+                {
+                    shopName:"Gong Cha - Chantilly",
+                    lat: 38.8947072279681,
+                    lng: -77.4266560875818,
+                    city: "Chantilly",
+                    zip: "20151"
+                },    
+                {
+                    shopName:"Gong Cha - Eden Center",
+                    lat: 38.8735944428943,
+                    lng: -77.1549384654874,
+                    city: "Falls Church",
+                    zip: "22044"
+                },
+                {
+                    shopName:"Gong Cha - Springfield",
+                    lat: 38.7814936827259,
+                    lng: -77.1871016928668,
+                    city: "Springfield",
+                    zip: "22150"
+                },
+                {
+                    shopName:"Gong Cha the Boro",
+                    lat: 38.9245599334436,
+                    lng: -77.2338069102715,
+                    city: "McLean",
+                    zip: "22102"
+                },
+                {
+                    shopName:"Heo Tea",
+                    lat: 38.8362639119898,
+                    city: "Centreville",
+                    zip: "20121"
+                },
+                {
+                    shopName:"Infini-Tea",
+                    lat: 38.8690391094471,
+                    lng: -77.1733203427517,
+                    city: "Falls Church",
+                    zip: "22042"
+                },
+                {
+                    shopName:"Java Loco Coffee & Bubble Tea Mt. Vernon",
+                    lat: 38.7499947751215,
+                    lng: -77.0847515842222,
+                    city: "Alexandria",
+                    zip: "22306"
+                },
+                {
+                    shopName:"Java Loco Coffee & Bubble Tea Van Dorn",
+                    lat: 38.8105290326835,
+                    lng: -77.1337174242868,
+                    city: "Alexandria",
+                    zip: "22304"
+                },
+                {
+                    shopName:"Jireh Bakery Café",
+                    lat: 38.839142208767,
+                    lng: -77.4270263978817,
+                    city: "Centreville",
+                    zip: "20120"
+                },
+                {
+                    shopName:"Koi Tea",
+                    lat: 38.4756220734579,
+                    lng: -77.4275221590502,
+                    city: "Stafford",
+                    zip: "22554"
+                },
+                {
+                    shopName:"Kokee Tea - Fair Oaks",
+                    lat: 38.8623953872683,
+                    lng: -77.3592240968629,
+                    city: "Fairfax",
+                    zip: "22033"
+                },
+                {
+                    shopName:"Kokee Tea - Fairfax (Main St.)",
+                    lat: 38.8423360237354,
+                    lng: -77.2759605506546,
+                    city: "Fairfax",
+                    zip: "22031"
+                },
+                {
+                    shopName:"Kokee Tea - Springfield Mall",
+                    lat: 38.7745055152852,
+                    lng: -77.1738556333021,
+                    city: "Springfield",
+                    zip: "22150"
+                },
+                {
+                    shopName:"Kokee Tea - Woodbridge",
+                    lat: 38.6437484441555,
+                    lng: -77.2987564178694,
+                    city: "Woodbridge",
+                    zip: "22192"
+                },
+                {
+                    shopName:"Komma Tea",
+                    lat: 38.6437379644188,
+                    lng: -77.2987698294084,
+                    city: "Woodbridge",
+                    zip: "22192"
+                },
+                {
+                    shopName:"Kung Fu Tea - Annandale",
+                    lat: 38.8261385135315,
+                    lng: -77.2136698256676,
+                    city: "Annandale",
+                    zip: "22003"
+                },
+                {
+                    shopName:"Kung Fu Tea - Bull Run",
+                    lat: 38.7853614256071,
+                    lng: -77.5166666659609,
+                    city: "Manassas",
+                    zip: "20109"
+                },
+                {
+                    shopName:"Kung Fu Tea - Burke",
+                    lat: 38.7783133721759,
+                    lng: -77.27335341219,
+                    city: "Burke",
+                    zip: "22015"
+                },
+                {
+                    shopName:"Kung Fu Tea - Centreville",
+                    lat: 38.839549700136,
+                    lng: -77.4262855261479,
+                    city: "Centreville",
+                    zip: "20120"
+                },
+                {
+                    shopName:"Kung Fu Tea - Court House",
+                    lat: 38.8875666949935,
+                    lng: -77.0946597662965,
+                    city: "Arlington",
+                    zip: "22201"
+                },
+                {
+                    shopName:"Kung Fu Tea - Dulles",
+                    lat: 39.0324299702912,
+                    lng: -77.4239606539062,
+                    city: "Sterling",
+                    zip: "20166"
+                },
+                {
+                    shopName:"Kung Fu Tea - Lorton",
+                    lat: 38.7024194203804,
+                    lng: -77.2200804890341,
+                    city: "Lorton",
+                    zip: "22079"
+                },
+                {
+                    shopName:"Kung Fu Tea - Reston",
+                    lat: 38.9367537313026,
+                    lng: -77.3633107190579,
+                    city: "Reston",
+                    zip: "20191"
+                },
+                {
+                    shopName:"Kung Fu Tea - Springfield",
+                    lat: 38.7731544250924,
+                    lng: -77.1846254846006,
+                    city: "Springfield",
+                    zip: "22150"
+                },
+                {
+                    shopName:"Kung Fu Tea - Sterling",
+                    lat: 39.0163012761229,
+                    lng: -77.3769213303948,
+                    city: "Sterling",
+                    zip: "20164"
+                },
+                {
+                    shopName:"Kung Fu Tea - Tysons",
+                    lat: 38.9180185896004,
+                    lng: -77.2229472504969,
+                    city: "McLean",
+                    zip: "22102"
+                },
+                {
+                    shopName:"Kung Fu Tea - Woodbridge",
+                    lat: 38.6746178077865,
+                    lng: -77.3335860367377,
+                    city: "Woodbridge",
+                    zip: "22192"
+                },
+                {
+                    shopName:"Lily Bubble Tea & Smoothie",
+                    lat: 38.8584303313441,
+                    lng: -77.0510584904051,
+                    city: "Arlington",
+                    zip: "22202"
+                },
+                {
+                    shopName:"Möge Tee - Arlington",
+                    lat: 38.8699795427819,
+                    lng: -77.1454806527237,
+                    city: "Falls Church",
+                    zip: "22044"
+                },
+                {
+                    shopName:"Möge Tee - Tysons",
+                    lat: 38.9171475665691,
+                    lng: -77.2229865838858,
+                    city: "McLean",
+                    zip: "22102"
+                },
+                {
+                    shopName:"Monster Roll Ice Cream",
+                    lat: 38.8630906791898,
+                    lng: -77.3603160034953,
+                    city: "Fairfax",
+                    zip: "22033"
+                },
+                {
+                    shopName:"Mr. Wish - Eden Center",
+                    lat: 38.874082778522,
+                    lng: -77.1548394299928,
+                    city: "Falls Church",
+                    zip: "22044"
+                },
+                {
+                    shopName:"Mr. Wish - Herndon",
+                    lat: 38.9618777909721,
+                    lng: -77.4008801129001,
+                    city: "Herndon",
+                    zip: "20170"
+                },
+                {
+                    shopName:"Ocha Tea",
+                    lat: 38.8243371938895,
+                    lng: -77.1721303052321,
+                    city: "Annandale",
+                    zip: "22003"
+                },
+                {
+                    shopName:"One Tea House - Falls Church",
+                    lat: 38.874268313865,
+                    lng: -77.1540431666506,
+                    city: "Falls Church",
+                    zip: "22044"
+                },
+                {
+                    shopName:"Onezo",
+                    lat: 38.8563715487875,
+                    lng: -77.3158626180367,
+                    city: "Fairfax",
+                    zip: "22030"
+                },
+                {
+                    shopName:"Panda Tea House - Arlington",
+                    lat: 38.8629927097441,
+                    lng: -77.0609751055611,
+                    city: "Arlington",
+                    zip: "22202"
+                },
+                {
+                    shopName:"Panda Tea House - Sterling",
+                    lat: 39.0316635140024,
+                    lng: -77.4229714725042,
+                    city: "Sterling",
+                    zip: "20166"
+                },
+                {
+                    shopName:"Sharetea Fairfax",
+                    lat: 38.8507421094172,
+                    lng: -77.3335014473066,
+                    city: "Fairfax",
+                    zip: "22030"
+                },
+                {
+                    shopName:"Sharetea Falls Church",
+                    lat: 38.8722653113124,
+                    lng: -77.1524007341553,
+                    city: "Falls Church",
+                    zip: "22044"
+                },
+                {
+                    shopName:"Shilla Bakery & Café Annandale",
+                    lat: 38.8288698722424,
+                    lng: -77.189431244102,
+                    city: "Annandale",
+                    zip: "22003"
+                },
+                {
+                    shopName:"Shilla Bakery & Café Centreville",
+                    lat: 38.8367798932543,
+                    lng: -77.4339432752115,
+                    city: "Centreville",
+                    zip: "20121"
+                },
+                {
+                    shopName:"Shilla Bakery & Café Chantilly",
+                    lat: 38.8960492938715,
+                    lng: -77.4264649877699,
+                    city: "Chantilly",
+                    zip: "20151"
+                },
+                {
+                    shopName:"Shilla Bakery & Café Tysons",
+                    lat: 38.9176717434455,
+                    lng: -77.2213634349418,
+                    city: "McLean",
+                    zip: "22102"
+                },
+                {
+                    shopName:"Snocream Company",
+                    lat: 38.8313693814743,
+                    lng: -77.1882649765752,
+                    city: "Annandale",
+                    zip: "22003"
+                },
+                {
+                    shopName:"Spill the Tea",
+                    lat: 38.8125784050187,
+                    lng: -77.053902386271,
+                    city: "Alexandria",
+                    zip: "22314"
+                },
+                {
+                    shopName:"T.Zone Dessert Bar",
+                    lat: 39.0365073524574,
+                    lng: -77.4081886603772,
+                    city: "Sterling",
+                    zip: "20165"
+                },
+                {
+                    shopName:"Tan Cha",
+                    lat: 38.8131803645639,
+                    lng: -77.1839657744155,
+                    city: "Annandale",
+                    zip: "22003"
+                },
+                {
+                    shopName:"Tea Do Annandale",
+                    lat: 38.8281778995173,
+                    lng: -77.1891586699401,
+                    city: "Annandale",
+                    zip: "22003"
+                },
+                {
+                    shopName:"Teabreak Pho & Boba Herndon",
+                    lat: 38.9670382678471,
+                    lng: -77.3678483963258,
+                    city: "Herndon",
+                    zip: "20170"
+                },
+                {
+                    shopName:"Teabreak Pho & Boba Sterling",
+                    lat: 39.029078941636,
+                    lng: -77.3890046530384,
+                    city: "Sterling",
+                    zip: "20164"
+                },
+                {
+                    shopName:"TeaDM",
+                    lat: 38.8652842168384,
+                    lng: -77.2716417585991,
+                    city: "Fairfax",
+                    zip: "22031"
+                },
+                {
+                    shopName:"TeaDM Mini",
+                    lat: 38.8999867326494,
+                    lng: -77.2661303803434,
+                    city: "Vienna",
+                    zip: "22180"
+                },
+                {
+                    shopName:"TeaDM Plus",
+                    lat: 38.8738192346034,
+                    lng: -77.155036213056,
+                    city: "Falls Church",
+                    zip: "22044"
+                },
+                {
+                    shopName:"Teahouse",
+                    lat: 38.9361962807613,
+                    lng: -77.5402914974309,
+                    city: "Chantilly",
+                    zip: "20152"
+                },
+                {
+                    shopName:"Teas\'n You",
+                    lat: 38.914049442404,
+                    lng: -77.2227302222651,
+                    city: "Vienna",
+                    zip: "22182"
+                },
+                {
+                    shopName:"Unitea Café",
+                    lat: 39.11557919955,
+                    lng: -77.5653093968494,
+                    city: "Leesburg",
+                    zip: "20176"
+                },
+                {
+                    shopName:"Vivi Bubble Tea Fairfax",
+                    lat: 38.8442480596345,
+                    lng: -77.2907886325075,
+                    city: "Fairfax",
+                    zip: "22031"
+                },
+                {
+                    shopName:"Vivi Bubble Tea Eden Center",
+                    lat: 38.874170443744,
+                    lng: -77.1551068734337,
+                    city: "Falls Church",
+                    zip: "22044"
+                },
+                {
+                    shopName:"Who Seek",
+                    lat: 38.8937018628453,
+                    lng: -77.4272437131896,
+                    city: "Chantilly",
+                    zip: "20151"
+                },
+                {
+                    shopName:"Yagút St.",
+                    lat: 38.811343505323,
+                    lng: -77.0446230296442,
+                    city: "Alexandria",
+                    zip: "22314"
+                },
+                {
+                    shopName:"Y-Tea",
+                    lat: 38.991178471349,
+                    lng: -77.5047401689232,
+                    city: "Ashburn",
+                    zip: "20148"
+                }
+            ];
+            var userSearch = document.getElementById("searchQuery");
+            var shopInfo;
+            var visibleMarkers = [];
+            var infoObj = [];
+
+            userSearch.addEventListener("keypress", function (e){ //check if user used enter key instead of clicking the button
+                if(e.key === 'Enter'){
+                    searchResults();
+                    closeInfoWindow();
+                }
+            });
+
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), mapDetails);
+
+                for(let i = 0; i < shops.length; i++){ //add markers for all shops
+                    shopInfo = "<b style='font-size: 1.25em'>" + shops[i].shopName + "</b>" + "<br>" + shops[i].city + ", VA";
+
+                    const marker = new google.maps.Marker({
+                        position: { lat: shops[i].lat, lng: shops[i].lng},
+                        map
+                    });
+                    markerArray.push(marker); //add marker to array of markers
+
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: shopInfo
+                    });
+                
+                    marker.addListener("click", () => {
+                        closeInfoWindow();
+                        infoWindow.open({
+                            anchor: marker,
+                            map
+                        });
+                        infoObj[0] = infoWindow;
+
+                        map.setZoom(15);
+                        map.setCenter(marker.getPosition());
+                    });
+                }
+           } //end init map
+
+           function closeInfoWindow(){
+                if(infoObj.length > 0){
+                    infoObj[0].set("marker", null);
+                    infoObj[0].close();
+                    infoObj[0].length = 0;
+                }
+           }
+
+           function searchResults(){ 
+                closeInfoWindow();
+
+                var query = document.getElementById("searchQuery").value;
+                query = query.toUpperCase();
+                var resultCount = 0;
+
+                map.setZoom(10);
+
+                for(let i = 0; i < shops.length; i++){ //reset markers for new search
+                    markerArray[i].setVisible(true);
+                }
+                
+                for(let i = 0; i < shops.length; i++){ //check for matches
+                    if(query == null || query == "" || query == " "){ //check for empty searches
+                        markerArray[i].setVisible(true);
+                        break;
+                    }
+                    else if(!(query.substring(0, 3) == shops[i].shopName.toUpperCase().substring(0, 3) || query == shops[i].city.toUpperCase() || query == shops[i].zip)){ //if they don't match, hide the pin
+                        markerArray[i].setVisible(false);
+                    }
+                    else {
+                        map.panTo(markerArray[i].getPosition()); //pan to area
+                        resultCount++;
+                    }
+                } //end for            
+
+                document.getElementById("results").innerHTML = "Your search returned " + resultCount + " shop(s).";
+           } //end search results
+        </script><!--end javascript-->
+    </body>
+</html>
