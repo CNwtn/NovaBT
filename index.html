@@ -627,9 +627,7 @@
             var shopInfo;
             var visibleMarkers = [];
             var infoObj = [];
-
-            google.maps.event.addDomListener(window, 'load', getLocation);
-
+            
             userSearch.addEventListener("keypress", function (e){ //check if user used enter key instead of clicking the button
                 if(e.key === 'Enter'){
                     searchResults();
