@@ -129,7 +129,7 @@ body {
   }
   #contentContainer #searchForm input {
     width: 98%;
-    height: 45px;
+    height: 35px;
     font-size: 1.15em;
   }
   #contentContainer #searchForm button {
@@ -137,12 +137,11 @@ body {
     font-size: 1.15em;
   }
   #contentContainer #searchForm select {
-    height: 30px;
     font-size: 1.15em;
   }
   #contentContainer #map {
     width: 100%;
-    height: 45%;
+    height: 40%;
     margin-top: 6%;
   }
   #siteInfo {
