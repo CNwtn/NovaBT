@@ -941,7 +941,7 @@
                 closeInfoWindow();
 
                 var query = document.getElementById("searchQuery").value;
-                query = query.toUpperCase();
+                query = query.trim().toUpperCase();
                 var filterChoice = document.getElementById("filterList").value;
                 var tempShopsArr = []; //used for filtered results
                 var tempMarkerArr = []; //used for filtered results
