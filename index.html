@@ -3729,8 +3729,8 @@
                 },
                 {
                     shopName:"TeaDM Street Food Corner",
-                    lat: 38.7297609,
-                    lng: 77.3908073, 
+                    lat: 39.0312327,
+                    lng: -77.4050388, 
                     city: "Sterling",
                     zip: "20164",
                     food: 'y',
@@ -4334,13 +4334,17 @@
            } //end search results
 
            function surpriseShop(){
+                var randomShop = Math.floor(Math.random() * shops.length); //get a random number to choose random shop
+                
                 closeInfoWindow();
 
                 for(let i = 0; i < shops.length; i++){ //reset markers and hide them
                     markerArray[i].setVisible(false);
                 }
 
-                var randomShop = Math.floor(Math.random() * shops.length); //get a random number to choose random shop
+                while(!(currentTime >= shops[randomShop][weekdays[currentWeekday]].open && currentTime <= shops[randomShop][weekdays[currentWeekday]].close)) { //make sure the surprise shop is open
+                    randomShop = Math.floor(Math.random() * shops.length);
+                }                
 
                 for(let i = 0; i < shops.length; i++){
                     if(!(shops[i] == shops[randomShop])){ //look for the shop that does match the shop with the random index
