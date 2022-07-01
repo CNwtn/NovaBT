@@ -27,6 +27,7 @@
                 <label for="filters">Filters:</label>
                 <select name="filters" id="filterList">
                     <option value=""></option>
+                    <option value="currently open">currently open</option>
                     <option value="has food">has food</option>
                     <option value="has desserts">has desserts</option>
                     <option value="has games">has games</option>
@@ -42,7 +43,8 @@
                 can find their next favorite shop in the area.<br><br>
                 Simply use the map or search box and enter a city, zip code, or shop name to help fulfill your next
                 boba craving. If you can't make a decision, click or tap the "surprise me" button, and a random shop will be chosen for you!<br><br>
-                Is there a shop that I missed? <a href="mailto:niuniurin@gmail.com">Please let me know</a>, and I will add it as soon as possible :)<br><br>
+                This website does <i>not</i> take special holiday hours into consideration, so please keep that in mind.<br><br>
+                Is there a shop or detail that I missed? <a href="mailto:niuniurin@gmail.com">Please let me know</a>, and I will add it as soon as possible :)<br><br>
                 Thank you for visiting!<br><br>
             </p>
         </div><!--end site info-->
@@ -53,9 +55,12 @@
             var map;
             let mapDetails = {
                 center:{ lat: 38.84575643258774,lng: -77.30619430989303},
-                zoom:10
-            };
+                zoom:10};
             var markerArray = [];
+            var currentTime = new Date().toLocaleTimeString('en-US', {timeZone: 'America/New_York', hour: 'numeric', hour12: false, minute: 'numeric'});
+            var w = new Date();
+            var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            var currentWeekday = w.getDay();
             let shops = [
                 {
                     shopName:"520 Ice Cream and Tea",  
@@ -65,7 +70,42 @@
                     zip: "22031",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12:30PM - 10PM",
+                        open: "12:30",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "12:30PM - 10PM",
+                        open: "12:30",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "12:30PM - 10PM",
+                        open: "12:30",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "12:30PM - 10PM",
+                        open: "12:30",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "12:30PM - 10PM",
+                        open: "12:30",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "12:30PM - 10PM",
+                        open: "12:30",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "12:30PM - 10PM",
+                        open: "12:30",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"5T Ice",
@@ -75,28 +115,63 @@
                     zip: "20166",
                     food: 'y',
                     dessert: 'y',
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 10:30PM",
+                        open: "11:00",
+                        close: "22:30"
+                    },
+                    Saturday: {
+                        hours: "11:30PM - 10:30PM",
+                        open: "11:00",
+                        close: "22:30"
+                    }
+                },
+                /*{
+                    shopName:"Argo Tea - Fairfax (temporarily closed)",
+                    lat: 38.83218252771181, 
+                    lng: -77.30675388685536,
+                    city: "Fairfax",
+                    zip: "22030",
+                    snacks: 'y',
+                    dessert: 'y',
                     games: 'n'
                 },
                 {
-                    shopName:"Argo Tea",
-                    lat: 38.8321694251996,
-                    lng: -77.306778389209,
-                    city: "Fairfax",
-                    zip: "22030",
-                    snacks: 'n',
-                    dessert: 'n',
+                    shopName:"Argo Tea - Alexandria (temporarily closed)",
+                    lat: 38.80096618294373,
+                    lng: -77.06383878720916,
+                    city: "Alexandria",
+                    zip: "22314",
+                    food: 'y',
+                    dessert: 'y',
                     games: 'n'
-                },
-                {
-                    shopName:"Argo Tea",
-                    lat: 38.8350527433599,
-                    lng: -77.3079800187618,
-                    city: "Fairfax",
-                    zip: "22030",
-                    food: 'n',
-                    dessert: 'n',
-                    games: 'n'
-                },
+                },*/
                 {
                     shopName:"Bees and Tea by Asia Bistro",
                     lat: 38.8631918707671,
@@ -105,7 +180,42 @@
                     zip: "22202",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "11:30AM - 10PM",
+                        open: "11:30",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "11:30AM - 10PM",
+                        open: "11:30",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "11:30AM - 10PM",
+                        open: "11:30",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "11:30AM - 10PM",
+                        open: "11:30",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "11:30AM - 11PM",
+                        open: "11:30",
+                        close: "23:00"
+                    },
+                    Saturday: {
+                        hours: "11:30AM - 11PM",
+                        open: "11:30",
+                        close: "23:00"
+                    }
                 },
                 {
                     shopName:"Ben Gong's Tea - Annandale",
@@ -115,7 +225,42 @@
                     zip: "22003",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 8:30PM",
+                        open: "12:00",
+                        close: "20:30"
+                    },
+                    Monday: {
+                        hours: "12PM - 8:30PM",
+                        open: "12:00",
+                        close: "20:30"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 8:30PM",
+                        open: "12:00",
+                        close: "20:30"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 8:30PM",
+                        open: "12:00",
+                        close: "20:30"
+                    },
+                    Thursday: {
+                        hours: "12PM - 8:30PM",
+                        open: "12:00",
+                        close: "20:30"
+                    },
+                    Friday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    }
                 },
                 {
                     shopName:"Ben Gong's Tea - Centreville",
@@ -125,7 +270,87 @@
                     zip: "20121",
                     food: 'n',
                     dessert: 'n',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 10:30PM",
+                        open: "12:00",
+                        close: "22:30"
+                    },
+                    Saturday: {
+                        hours: "12PM - 10:30PM",
+                        open: "12:00",
+                        close: "22:30"
+                    }
+                },
+                {
+                    shopName:"Ben Gong's Tea - Fairfax",
+                    lat: 38.856461861476774, 
+                    lng: -77.31560336595811,
+                    city: "Fairfax",
+                    zip: "22030",
+                    food: 'n',
+                    dessert: 'n',
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    }
                 },
                 {
                     shopName:"Bobapop Tea Bar - Merrifield",
@@ -135,7 +360,42 @@
                     zip: "22042",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Breeze Bakery Café",
@@ -145,7 +405,42 @@
                     zip: "22003",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "7AM - 11PM",
+                        open: "07:00",
+                        close: "23:00"
+                    },
+                    Monday: {
+                        hours: "7AM - 11PM",
+                        open: "07:00",
+                        close: "23:00"
+                    },
+                    Tuesday: {
+                        hours: "7AM - 11PM",
+                        open: "07:00",
+                        close: "23:00"
+                    },
+                    Wednesday: {
+                        hours: "7AM - 11PM",
+                        open: "07:00",
+                        close: "23:00"
+                    },
+                    Thursday: {
+                        hours: "7AM - 11PM",
+                        open: "07:00",
+                        close: "23:00"
+                    },
+                    Friday: {
+                        hours: "7AM - 11PM",
+                        open: "07:00",
+                        close: "23:00"
+                    },
+                    Saturday: {
+                        hours: "7AM - 11PM",
+                        open: "07:00",
+                        close: "23:00"
+                    }
                 },
                 {
                     shopName:"Bubble Mochi",
@@ -155,7 +450,42 @@
                     zip: "22180",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "10AM - 8PM",
+                        open: "10:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 8PM",
+                        open: "10:00",
+                        close: "20:00"
+                    }
                 },
                 {
                     shopName:"Bubble Tea Station",
@@ -165,7 +495,42 @@
                     zip: "20109",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 6:00PM",
+                        open: "12:00",
+                        close: "18:00"
+                    },
+                    Monday: {
+                        hours: "10AM - 8:00PM",
+                        open: "10:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "10AM - 8:00PM",
+                        open: "10:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "10AM - 8:00PM",
+                        open: "10:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "10AM - 8:00PM",
+                        open: "10:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "10AM - 8:00PM",
+                        open: "10:00",
+                        close: "20:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 8:00PM",
+                        open: "10:00",
+                        close: "20:00"
+                    }
                 },
                 {
                     shopName:"Bubbleology",
@@ -175,7 +540,42 @@
                     zip: "20175",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Café Miki",
@@ -185,7 +585,42 @@
                     zip: "22192",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    },
+                    Monday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    },
+                    Friday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    }
                 },
                 {
                     shopName: "Cafe O'Clock",
@@ -195,7 +630,42 @@
                     zip: "22031",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Monday: {
+                        hours: "10AM - 3PM",
+                        open: "10:00",
+                        close: "15:00"
+                    },
+                    Tuesday: {
+                        hours: "10AM - 3PM",
+                        open: "10:00",
+                        close: "15:00"
+                    },
+                    Wednesday: {
+                        hours: "10AM - 3PM",
+                        open: "10:00",
+                        close: "15:00"
+                    },
+                    Thursday: {
+                        hours: "10AM - 3PM",
+                        open: "10:00",
+                        close: "15:00"
+                    },
+                    Friday: {
+                        hours: "10AM - 3PM",
+                        open: "10:00",
+                        close: "15:00"
+                    },
+                    Saturday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    }
                 },
                 {
                     shopName:"Cents Taro Family",
@@ -205,7 +675,42 @@
                     zip: "22031",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "2PM - 8PM",
+                        open: "14:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "2PM - 7:30PM",
+                        open: "14:00",
+                        close: "19:30"
+                    },
+                    Tuesday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Wednesday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Thursday: {
+                        hours: "2PM - 7:30PM",
+                        open: "14:00",
+                        close: "19:30"
+                    },
+                    Friday: {
+                        hours: "3PM - 8:30PM",
+                        open: "15:00",
+                        close: "20:30"
+                    },
+                    Saturday: {
+                        hours: "2PM - 9PM",
+                        open: "14:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Chill Zone Café",
@@ -215,17 +720,87 @@
                     zip: "22207",
                     food: 'y',
                     dessert: 'y',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "10AM - 8:30PM",
+                        open: "10:00",
+                        close: "20:30"
+                    },
+                    Thursday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "10AM - 10PM",
+                        open: "10:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    }
                 },
                 {
-                    shopName:"Chunky Cup Bubble Tea and Fries (Coming Soon)",
+                    shopName:"Chunky Cup Bubble Tea and Fries",
                     lat: 38.6786430423673,
                     lng: -77.359470511346,
                     city: "Woodbridge",
                     zip: "22192",
                     food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName: "Donutchew Annandale",
@@ -235,7 +810,132 @@
                     zip: "22003",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
+                },
+                {
+                    shopName: "Donutchew Centreville (inside Little Japan)",
+                    lat: 38.827483260668714, 
+                    lng: -77.4394327713058,
+                    city: "Centreville",
+                    zip: "20121",
+                    food: 'y',
+                    dessert: 'y',
+                    games: 'n',
+                    Sunday: {
+                        hours: "11:30AM - 11PM",
+                        open: "11:30",
+                        close: "23:00"
+                    },
+                    Monday: {
+                        hours: "11:30AM - 11PM",
+                        open: "11:30",
+                        close: "23:00"
+                    },
+                    Tuesday: {
+                        hours: "11:30AM - 11PM",
+                        open: "11:30",
+                        close: "23:00"
+                    },
+                    Wednesday: {
+                        hours: "11:30AM - 11PM",
+                        open: "11:30",
+                        close: "23:00"
+                    },
+                    Thursday: {
+                        hours: "11:30AM - 11PM",
+                        open: "11:30",
+                        close: "23:00"
+                    },
+                    Friday: {
+                        hours: "11:30AM - 11PM",
+                        open: "11:30",
+                        close: "23:00"
+                    },
+                    Saturday: {
+                        hours: "11:30AM - 11PM",
+                        open: "11:30",
+                        close: "23:00"
+                    }
+                },
+                {
+                    shopName: "Donutchew Fair Oaks",
+                    lat: 38.862855582422505, 
+                    lng: -77.35885417759194,
+                    city: "Fairfax",
+                    zip: "22033",
+                    food: 'n',
+                    dessert: 'y',
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Empress Pearl Milk Tea",
@@ -245,7 +945,42 @@
                     zip: "20132",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 7PM",
+                        open: "12:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "1PM - 7PM",
+                        open: "13:00",
+                        close: "19:00"
+                    },
+                    Tuesday: {
+                        hours: "1PM - 7PM",
+                        open: "13:00",
+                        close: "19:00"
+                    },
+                    Wednesday: {
+                        hours: "1PM - 7PM",
+                        open: "13:00",
+                        close: "19:00"
+                    },
+                    Thursday: {
+                        hours: "1PM - 7PM",
+                        open: "13:00",
+                        close: "19:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 7PM",
+                        open: "12:00",
+                        close: "19:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 7PM",
+                        open: "12:00",
+                        close: "19:00"
+                    }
                 },
                 {
                     shopName:"Fortune Cha",
@@ -255,7 +990,42 @@
                     zip: "22312",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11:30AM - 10PM",
+                        open: "11:30",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11:30AM - 10PM",
+                        open: "11:30",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Gong Cha - Rosslyn",
@@ -265,7 +1035,42 @@
                     zip: "22209",
                     food: 'n',
                     dessert: 'y',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "12PM - 9:30PM",
+                        open: "12:00",
+                        close: "21:30"
+                    },
+                    Monday: {
+                        hours: "11:00AM - 9:30PM",
+                        open: "11:00",
+                        close: "21:30"
+                    },
+                    Tuesday: {
+                        hours: "11:00AM - 9:30PM",
+                        open: "11:00",
+                        close: "21:30"
+                    },
+                    Wednesday: {
+                        hours: "11:00AM - 9:30PM",
+                        open: "11:00",
+                        close: "21:30"
+                    },
+                    Thursday: {
+                        hours: "11:00AM - 9:30PM",
+                        open: "11:00",
+                        close: "21:30"
+                    },
+                    Friday: {
+                        hours: "11:00AM - 10:30PM",
+                        open: "11:00",
+                        close: "22:30"
+                    },
+                    Saturday: {
+                        hours: "12PM - 10:30PM",
+                        open: "12:00",
+                        close: "22:30"
+                    }
                 },
                 {
                     shopName:"Gong Cha - Annandale",
@@ -275,7 +1080,42 @@
                     zip: "22003",
                     food: 'n',
                     dessert: 'y',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Gong Cha - Chantilly",
@@ -285,7 +1125,42 @@
                     zip: "20151",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 8:45PM",
+                        open: "12:00",
+                        close: "20:45"
+                    },
+                    Monday: {
+                        hours: "12PM - 8:45PM",
+                        open: "12:00",
+                        close: "20:45"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 8:45PM",
+                        open: "12:00",
+                        close: "20:45"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 8:45PM",
+                        open: "12:00",
+                        close: "20:45"
+                    },
+                    Thursday: {
+                        hours: "12PM - 8:45PM",
+                        open: "12:00",
+                        close: "20:45"
+                    },
+                    Friday: {
+                        hours: "12PM - 9:45PM",
+                        open: "12:00",
+                        close: "21:45"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9:45PM",
+                        open: "12:00",
+                        close: "21:45"
+                    }
                 },    
                 {
                     shopName:"Gong Cha - Eden Center",
@@ -295,17 +1170,87 @@
                     zip: "22044",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "10:30AM - 8PM",
+                        open: "10:30",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "10:30AM - 8PM",
+                        open: "10:30",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "10:30AM - 8PM",
+                        open: "10:30",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "10:30AM - 8PM",
+                        open: "10:30",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    }
                 },
                 {
-                    shopName:"Gong Cha - Springfield (Coming Soon)",
+                    shopName:"Gong Cha - Springfield",
                     lat: 38.7814936827259,
                     lng: -77.1871016928668,
                     city: "Springfield",
                     zip: "22150",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11:30AM - 10PM",
+                        open: "11:30",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11:30AM - 10PM",
+                        open: "11:30",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Gong Cha the Boro",
@@ -315,7 +1260,42 @@
                     zip: "22102",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Heo Tea",
@@ -325,7 +1305,42 @@
                     zip: "20121",
                     food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Infini-Tea",
@@ -335,7 +1350,42 @@
                     zip: "22042",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11:30AM - 9:30PM",
+                        open: "11:30",
+                        close: "21:30"
+                    },
+                    Monday: {
+                        hours: "11:00AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11:00AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11:00AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11:00AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11:00AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11:00AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Java Loco Coffee & Bubble Tea Mt. Vernon",
@@ -345,7 +1395,42 @@
                     zip: "22306",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "8AM - 8:30PM",
+                        open: "08:00",
+                        close: "20:30"
+                    },
+                    Monday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Tuesday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Wednesday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Thursday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Friday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Saturday: {
+                        hours: "8AM - 8:30PM",
+                        open: "08:00",
+                        close: "20:30"
+                    }
                 },
                 {
                     shopName:"Java Loco Coffee & Bubble Tea Van Dorn",
@@ -355,7 +1440,42 @@
                     zip: "22304",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Monday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Tuesday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Wednesday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Thursday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Friday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Saturday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    }
                 },
                 {
                     shopName: "Java Loco Coffee & Bubble Tea Tysons",
@@ -365,7 +1485,42 @@
                     zip: "22043",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "8AM - 8PM",
+                        open: "08:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Tuesday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Wednesday: {
+                        hours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Thursday: {
+                        hhours: "7:30AM - 8:30PM",
+                        open: "07:30",
+                        close: "20:30"
+                    },
+                    Friday: {
+                        hours: "11:30AM - 10PM",
+                        open: "11:30",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "8AM - 8PM",
+                        open: "08:00",
+                        close: "20:00"
+                    }
                 },
                 {
                     shopName:"Jireh Bakery Café",
@@ -375,7 +1530,42 @@
                     zip: "20120",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Koi Tea",
@@ -385,7 +1575,42 @@
                     zip: "22554",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Kokee Tea - Fair Oaks",
@@ -395,7 +1620,42 @@
                     zip: "22033",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11:00AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "10:00AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    },
+                    Tuesday: {
+                        hours: "10:00AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    },
+                    Wednesday: {
+                        hours: "10:00AM - 8:30PM",
+                        open: "10:00",
+                        close: "20:30"
+                    },
+                    Thursday: {
+                        hours: "10:00AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    },
+                    Friday: {
+                        hours: "10:00AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    },
+                    Saturday: {
+                        hours: "10:00AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    }
                 },
                 {
                     shopName:"Kokee Tea - Fairfax (Main St.)",
@@ -405,7 +1665,42 @@
                     zip: "22031",
                     food: 'y',
                     dessert: 'y',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11:00AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11:00AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11:00AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11:00AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "11:00AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Kokee Tea - Springfield Mall",
@@ -415,7 +1710,42 @@
                     zip: "22150",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11:00AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Saturday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    }
                 },
                 {
                     shopName:"Komma Tea",
@@ -425,7 +1755,42 @@
                     zip: "22192",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11:00AM - 6PM",
+                        open: "11:00",
+                        close: "18:00"
+                    },
+                    Monday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "11:00AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "10:00AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "10:00AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Annandale",
@@ -435,7 +1800,42 @@
                     zip: "22003",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Manassas",
@@ -445,7 +1845,42 @@
                     zip: "20109",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Burke",
@@ -455,7 +1890,42 @@
                     zip: "22015",
                     food: 'n',
                     dessert: 'n',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "11:00AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11:30AM - 9PM",
+                        open: "11:30",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11:30AM - 10PM",
+                        open: "11:30",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11:00AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Centreville",
@@ -465,7 +1935,42 @@
                     zip: "20120",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Clarendon",
@@ -475,7 +1980,42 @@
                     zip: "22201",
                     food: 'y',
                     dessert: 'n',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Dulles Town Center",
@@ -485,7 +2025,42 @@
                     zip: "20166",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Lorton",
@@ -495,7 +2070,42 @@
                     zip: "22079",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Reston",
@@ -505,7 +2115,42 @@
                     zip: "20191",
                     food: 'n',
                     dessert: 'n',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Springfield",
@@ -515,7 +2160,42 @@
                     zip: "22150",
                     food: 'n',
                     dessert: 'n',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Sterling",
@@ -525,7 +2205,42 @@
                     zip: "20164",
                     food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Tysons",
@@ -535,7 +2250,42 @@
                     zip: "22102",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 7PM",
+                        open: "12:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Kung Fu Tea - Woodbridge",
@@ -545,7 +2295,87 @@
                     zip: "22192",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
+                },
+                {
+                    shopName:"Love: Juice Drink Bites",
+                    lat: 38.848678384554724, 
+                    lng: -77.3036519627467,
+                    city: "Fairfax",
+                    zip: "22030",
+                    food: 'y',
+                    dessert: 'y',
+                    games: 'n',
+                    Sunday: {
+                        hours: "10AM - 7PM",
+                        open: "10:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "10AM - 7PM",
+                        open: "10:00",
+                        close: "19:00"
+                    },
+                    Tuesday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Wednesday: {
+                        hours: "10AM - 7PM",
+                        open: "10:00",
+                        close: "19:00"
+                    },
+                    Thursday: {
+                        hours: "10AM - 7PM",
+                        open: "10:00",
+                        close: "19:00"
+                    },
+                    Friday: {
+                        hours: "10AM - 7PM",
+                        open: "10:00",
+                        close: "19:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 7PM",
+                        open: "10:00",
+                        close: "19:00"
+                    }
                 },
                 {
                     shopName:"Lily Bubble Tea & Smoothie",
@@ -555,7 +2385,132 @@
                     zip: "22202",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Monday: {
+                        hours: "11:30AM - 6:30PM",
+                        open: "11:30",
+                        close: "18:30"
+                    },
+                    Tuesday: {
+                        hours: "11:30AM - 6:30PM",
+                        open: "11:30",
+                        close: "18:30"
+                    },
+                    Wednesday: {
+                        hours: "11:30AM - 6:30PM",
+                        open: "11:30",
+                        close: "18:30"
+                    },
+                    Thursday: {
+                        hours: "11:30AM - 6:30PM",
+                        open: "11:30",
+                        close: "18:30"
+                    },
+                    Friday: {
+                        hours: "11:30AM - 6:30PM",
+                        open: "11:30",
+                        close: "18:30"
+                    },
+                    Saturday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    }
+                },
+                { 
+                    shopName:"Mochi & Mochi",
+                    lat: 38.83790981562773, 
+                    lng: -77.43599873307684,
+                    city: "Falls Church",
+                    zip: "22044",
+                    food: 'n',
+                    dessert: 'y',
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Tuesday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    }
+                },
+                { 
+                    shopName:"Mochinut - Leesburg",
+                    lat: 39.09006776588878, 
+                    lng: -77.52487524111483,
+                    city: "Leesburg",
+                    zip: "20175",
+                    food: 'y',
+                    dessert: 'y',
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Möge Tee - Falls Church",
@@ -565,7 +2520,42 @@
                     zip: "22044",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Möge Tee - Tysons",
@@ -575,7 +2565,42 @@
                     zip: "22102",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Mr. Wish - Eden Center",
@@ -585,7 +2610,42 @@
                     zip: "22044",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Mr. Wish - Herndon",
@@ -595,7 +2655,42 @@
                     zip: "20170",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Ocha Tea",
@@ -605,7 +2700,42 @@
                     zip: "22003",
                     food: 'y',
                     dessert: 'y',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"One Tea House - Falls Church",
@@ -615,7 +2745,42 @@
                     zip: "22044",
                     food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Onezo",
@@ -623,9 +2788,44 @@
                     lng: -77.3158626180367,
                     city: "Fairfax",
                     zip: "22030",
-                    food: 'n',
+                    food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 8:30PM",
+                        open: "11:00",
+                        close: "20:30"
+                    },
+                    Monday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 8:30PM",
+                        open: "11:00",
+                        close: "20:30"
+                    },
+                    Saturday: {
+                        hours: "11AM - 8:30PM",
+                        open: "11:00",
+                        close: "20:30"
+                    }
                 },
                 {
                     shopName:"Panda Tea House - Arlington",
@@ -635,7 +2835,42 @@
                     zip: "22202",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 6PM",
+                        open: "11:00",
+                        close: "18:00"
+                    },
+                    Monday: {
+                        hours: "10AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    },
+                    Tuesday: {
+                        hours: "10AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    },
+                    Wednesday: {
+                        hours: "10AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    },
+                    Thursday: {
+                        hours: "10AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    },
+                    Friday: {
+                        hours: "10AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    },
+                    Saturday: {
+                        hours: "10AM - 9:30PM",
+                        open: "10:00",
+                        close: "21:30"
+                    }
                 },
                 {
                     shopName:"Panda Tea House - Sterling",
@@ -645,7 +2880,42 @@
                     zip: "20166",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    }
                 },
                 {
                     shopName:"Sharetea Fairfax",
@@ -655,7 +2925,42 @@
                     zip: "22030",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "1PM - 8PM",
+                        open: "13:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "1PM - 8PM",
+                        open: "13:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "1PM - 8PM",
+                        open: "13:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "1PM - 8PM",
+                        open: "13:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Sharetea Falls Church",
@@ -665,7 +2970,42 @@
                     zip: "22044",
                     food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11PM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Shilla Bakery & Café Annandale",
@@ -675,17 +3015,87 @@
                     zip: "22003",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    }
                 },
                 {
-                    shopName:"Shilla Bakery & Café Centreville",
+                    shopName:"Shilla Patisserie Café Centreville",
                     lat: 38.8367798932543,
                     lng: -77.4339432752115,
                     city: "Centreville",
                     zip: "20121",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "8AM - 9PM",
+                        open: "08:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "8AM - 9PM",
+                        open: "08:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "8AM - 9PM",
+                        open: "08:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "8AM - 9PM",
+                        open: "08:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "8AM - 9PM",
+                        open: "08:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "8AM - 10PM",
+                        open: "08:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "8AM - 10PM",
+                        open: "08:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Shilla Bakery & Café Chantilly",
@@ -695,7 +3105,42 @@
                     zip: "20151",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "7AM - 10PM",
+                        open: "07:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "7AM - 10PM",
+                        open: "07:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "7AM - 10PM",
+                        open: "07:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "7AM - 10PM",
+                        open: "07:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "7AM - 10PM",
+                        open: "07:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "7AM - 10PM",
+                        open: "07:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "7AM - 10PM",
+                        open: "07:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Shilla Bakery & Café Tysons",
@@ -705,7 +3150,42 @@
                     zip: "22102",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "10:30AM - 8PM",
+                        open: "10:30",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "10:30AM - 8PM",
+                        open: "10:30",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "10:30AM - 8PM",
+                        open: "10:30",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "10:30AM - 8PM",
+                        open: "10:30",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName: "Smash\'D Creamery",
@@ -715,7 +3195,42 @@
                     zip: "22030",
                     food: 'n',
                     dessert: 'y',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "3PM - 9PM",
+                        open: "15:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "5:30PM - 9PM",
+                        open: "17:30",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Wednesday: {
+                        hours: "5:30PM - 9PM",
+                        open: "17:30",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "5:30PM - 9PM",
+                        open: "17:30",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "3PM - 10PM",
+                        open: "15:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "3PM - 10PM",
+                        open: "15:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Snocream Company",
@@ -725,7 +3240,42 @@
                     zip: "22003",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Spill the Tea",
@@ -735,7 +3285,42 @@
                     zip: "22314",
                     food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    }
                 },
                 {
                     shopName:"T.Zone Dessert Bar",
@@ -745,7 +3330,42 @@
                     zip: "20165",
                     food: 'y',
                     dessert: 'y',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "10AM - 10PM",
+                        open: "10:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 10PM",
+                        open: "10:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Tan Cha",
@@ -755,7 +3375,42 @@
                     zip: "22003",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 10PM",
+                        open: "12:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 11PM",
+                        open: "12:00",
+                        close: "23:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 11PM",
+                        open: "12:00",
+                        close: "23:00"
+                    }
                 },
                 {
                     shopName:"Tea Do Annandale",
@@ -763,9 +3418,89 @@
                     lng: -77.1891586699401,
                     city: "Annandale",
                     zip: "22003",
-                    food: 'n',
+                    food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'y',
+                    Sunday: {
+                        hours: "12PM - 12AM",
+                        open: "12:00",
+                        close: "00:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 12AM",
+                        open: "12:00",
+                        close: "00:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 12AM",
+                        open: "12:00",
+                        close: "00:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 12AM",
+                        open: "12:00",
+                        close: "00:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 12AM",
+                        open: "12:00",
+                        close: "00:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 1AM",
+                        open: "12:00",
+                        close: "01:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 1AM",
+                        open: "12:00",
+                        close: "01:00"
+                    }
+                },
+                {
+                    shopName:"Tea Do Fairfax",
+                    lat: 38.853727795638534, 
+                    lng: -77.32754221634724,
+                    city: "Fairfax",
+                    zip: "22030",
+                    food: 'y',
+                    dessert: 'n',
+                    games: 'y',
+                    Sunday: {
+                        hours: "11AM - 12AM",
+                        open: "11:00",
+                        close: "00:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 12AM",
+                        open: "11:00",
+                        close: "00:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 12AM",
+                        open: "11:00",
+                        close: "00:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 12AM",
+                        open: "11:00",
+                        close: "00:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 12AM",
+                        open: "11:00",
+                        close: "00:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 1AM",
+                        open: "11:00",
+                        close: "01:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 1AM",
+                        open: "12:00",
+                        close: "01:00"
+                    }
                 },
                 {
                     shopName:"Teabreak Pho & Boba Herndon",
@@ -775,7 +3510,42 @@
                     zip: "20170",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Monday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 7PM",
+                        open: "11:00",
+                        close: "19:00"
+                    }
                 },
                 {
                     shopName:"Teabreak Pho & Boba Sterling",
@@ -785,17 +3555,87 @@
                     zip: "20164",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "10:30AM - 8:30PM",
+                        open: "10:30",
+                        close: "20:30"
+                    },
+                    Monday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "10:30AM - 9PM",
+                        open: "10:30",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "10:30AM - 9:30PM",
+                        open: "10:30",
+                        close: "21:30"
+                    },
+                    Saturday: {
+                        hours: "10:30AM - 9:30PM",
+                        open: "10:30",
+                        close: "21:30"
+                    }
                 },
                 {
-                    shopName:"TeaDM",
+                    shopName:"TeaDM - Fairfax",
                     lat: 38.8652842168384,
                     lng: -77.2716417585991,
                     city: "Fairfax",
                     zip: "22031",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "9AM - 9PM",
+                        open: "09:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "9AM - 9PM",
+                        open: "09:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "9AM - 9PM",
+                        open: "09:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "9AM - 9PM",
+                        open: "09:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "9AM - 9PM",
+                        open: "09:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "9AM - 10PM",
+                        open: "09:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "9AM - 10PM",
+                        open: "09:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"TeaDM Mini",
@@ -805,7 +3645,42 @@
                     zip: "22180",
                     food: 'n',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "9AM - 8PM",
+                        open: "09:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "9AM - 8PM",
+                        open: "09:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "9AM - 8PM",
+                        open: "09:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "9AM - 8PM",
+                        open: "09:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "9AM - 8PM",
+                        open: "09:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "9AM - 9PM",
+                        open: "09:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "9AM - 9PM",
+                        open: "09:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"TeaDM Plus",
@@ -815,7 +3690,42 @@
                     zip: "22044",
                     food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "7AM - 8PM",
+                        open: "07:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "7AM - 8PM",
+                        open: "07:00",
+                        close: "20:00"
+                    },
+                    Tuesday: {
+                        hours: "7AM - 8PM",
+                        open: "07:00",
+                        close: "20:00"
+                    },
+                    Wednesday: {
+                        hours: "7AM - 8PM",
+                        open: "07:00",
+                        close: "20:00"
+                    },
+                    Thursday: {
+                        hours: "7AM - 8PM",
+                        open: "07:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "7AM - 9PM",
+                        open: "07:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"TeaDM Street Food Corner",
@@ -825,7 +3735,42 @@
                     zip: "20164",
                     food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "10AM - 9PM",
+                        open: "10:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Teahouse",
@@ -835,7 +3780,42 @@
                     zip: "20152",
                     food: 'n',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Teas\'n You",
@@ -845,7 +3825,42 @@
                     zip: "22182",
                     food: 'y',
                     dessert: 'y',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "12PM - 8PM",
+                        open: "12:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Unitea Café",
@@ -855,7 +3870,42 @@
                     zip: "20176",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 6PM",
+                        open: "11:00",
+                        close: "18:00"
+                    },
+                    Monday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Tuesday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "11PM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Vivi Bubble Tea Fairfax",
@@ -865,7 +3915,42 @@
                     zip: "22031",
                     food: 'y',
                     dessert: 'n',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Vivi Bubble Tea Eden Center",
@@ -875,7 +3960,42 @@
                     zip: "22044",
                     food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "10:30AM - 10PM",
+                        open: "10:30",
+                        close: "22:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 10PM",
+                        open: "11:00",
+                        close: "22:00"
+                    },
+                    Saturday: {
+                        hours: "10:30AM - 10PM",
+                        open: "10:30",
+                        close: "22:00"
+                    }
                 },
                 {
                     shopName:"Who Seek",
@@ -885,7 +4005,87 @@
                     zip: "20151",
                     food: 'n',
                     dessert: 'y',
-                    games: 'y'
+                    games: 'y',
+                    Sunday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "12PM - 9PM",
+                        open: "12:00",
+                        close: "21:00"
+                    }
+                },
+                {
+                    shopName:"Y-Tea",
+                    lat: 38.991152152718065, 
+                    lng: -77.5047614576715,
+                    city: "Ashburn",
+                    zip: "20148",
+                    food: 'n',
+                    dessert: 'n',
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Monday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Yagút St.",
@@ -895,7 +4095,42 @@
                     zip: "22314",
                     food: 'y',
                     dessert: 'y',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Monday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Tuesday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Wednesday: {
+                        hours: "n/a",
+                        open: "n/a",
+                        close: "n/a"
+                    },
+                    Thursday: {
+                        hours: "11AM - 8PM",
+                        open: "11:00",
+                        close: "20:00"
+                    },
+                    Friday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    },
+                    Saturday: {
+                        hours: "11AM - 9PM",
+                        open: "11:00",
+                        close: "21:00"
+                    }
                 },
                 {
                     shopName:"Yi Fang Taiwan Fruit Tea",
@@ -905,18 +4140,43 @@
                     zip: "22030",
                     food: 'y',
                     dessert: 'n',
-                    games: 'n'
+                    games: 'n',
+                    Sunday: {
+                        hours: "11AM - 9:30PM",
+                        open: "11:00",
+                        close: "21:30"
+                    },
+                    Monday: {
+                        hours: "11AM - 9:30PM",
+                        open: "11:00",
+                        close: "21:30"
+                    },
+                    Tuesday: {
+                        hours: "11AM - 9:30PM",
+                        open: "11:00",
+                        close: "21:30"
+                    },
+                    Wednesday: {
+                        hours: "11AM - 9:30PM",
+                        open: "11:00",
+                        close: "21:30"
+                    },
+                    Thursday: {
+                        hours: "11AM - 9:30PM",
+                        open: "11:00",
+                        close: "21:30"
+                    },
+                    Friday: {
+                        hours: "11AM - 10:30PM",
+                        open: "11:00",
+                        close: "22:30"
+                    },
+                    Saturday: {
+                        hours: "11AM - 10:30PM",
+                        open: "11:00",
+                        close: "22:30"
+                    }
                 },
-                {
-                    shopName:"Y-Tea",
-                    lat: 38.991178471349,
-                    lng: -77.5047401689232,
-                    city: "Ashburn",
-                    zip: "20148",
-                    food: 'n',
-                    dessert: 'n',
-                    games: 'n'
-                }
             ];
             var userSearch = document.getElementById("searchQuery");
             var shopInfo;
@@ -931,12 +4191,17 @@
 
             function initMap() {
                 map = new google.maps.Map(document.getElementById("map"), mapDetails);
-
+                
                 for(let i = 0; i < shops.length; i++){ //add markers for all shops
-                    shopInfo = "<b style='font-size: 1.25em; color: black'>" + shops[i].shopName + "</b>" + "<br><span style='color: black'>" + shops[i].city + ", VA</span>";
+                    if(currentTime >= shops[i][weekdays[currentWeekday]].open && currentTime <= shops[i][weekdays[currentWeekday]].close) { //if the shop is open
+                        shopInfo = "<b style='font-size: 1.25em; color: black'>" + shops[i].shopName + "</b>" + "<br><span style='color: green'><i>Open</i></span><span style='color: black'><br>" + shops[i][weekdays[currentWeekday]].hours + "</span>"; // javascript mon = 1
+                    }
+                    else { //if it's closed
+                        shopInfo = "<b style='font-size: 1.25em; color: black'>" + shops[i].shopName + "</b>" + "<br><span style='color: red'><i>Closed</i></span><span style='color: black'><br>" + shops[i][weekdays[currentWeekday]].hours + "</span>";
+                    }
 
                     const marker = new google.maps.Marker({
-                        position: { lat: shops[i].lat, lng: shops[i].lng},
+                        position: {lat: shops[i].lat, lng: shops[i].lng},
                         map
                     });
                     markerArray.push(marker); //add marker to array of markers
@@ -957,7 +4222,7 @@
                         map.setCenter(marker.getPosition());
                     });
                 }
-           } //end init map
+            }//end init map
 
             function closeInfoWindow(){
                 if(infoObj.length > 0){
@@ -977,19 +4242,30 @@
                 var tempMarkerArr = []; //used for filtered results
                 var resultCount = 0;
 
-                map.setZoom(10);
+                map.setZoom(9);
 
                 for(let i = 0; i < shops.length; i++){ //reset markers for new search so they appear
                     markerArray[i].setVisible(true);
                 }
 
                 if(filterChoice != ""){ //check for filter matches and add to temp arrays
-        
-                    if(filterChoice == "has food"){ 
+                    
+                    if(filterChoice == "currently open") {
                         for(let i = 0; i < shops.length; i++){
-                            if(shops[i].food == 'y'){
+                            if(currentTime >= shops[i][weekdays[currentWeekday]].open && currentTime <= shops[i][weekdays[currentWeekday]].close){
                                 tempShopsArr.push(shops[i]); //add filtered shops to temporary array so that original array isn't altered
                                 tempMarkerArr.push(markerArray[i]); //add filtered markers to temporary array so that original array isn't altered
+                            }
+                            else {
+                                markerArray[i].setVisible(false);
+                            }
+                        } //end for
+                    }
+                    else if(filterChoice == "has food"){ 
+                        for(let i = 0; i < shops.length; i++){
+                            if(shops[i].food == 'y'){
+                                tempShopsArr.push(shops[i]); 
+                                tempMarkerArr.push(markerArray[i]); 
                             }
                             else {
                                 markerArray[i].setVisible(false);
@@ -1018,14 +4294,14 @@
                             }
                         } //end for
                     }
-
+                   
                     for(let i = 0; i < tempShopsArr.length; i++){ //check for matches
                         
                         if(query == null || query == "" || query == " "){ //if there is an empty or null search, show all pins
                             tempMarkerArr[i].setVisible(true);
                             resultCount++;
                         }
-                        else if(!(query.substring(0, 3) == tempShopsArr[i].shopName.toUpperCase().substring(0, 3) || query == tempShopsArr[i].city.toUpperCase() || query == tempShopsArr[i].zip)){ //if they don't match, hide the pin
+                        else if(!(tempShopsArr[i].shopName.toUpperCase().includes(query)|| tempShopsArr[i].city.toUpperCase().includes(query) || query == tempShopsArr[i].zip)){ //if they don't match, hide the pin
                             tempMarkerArr[i].setVisible(false);
                         }
                         else { //if there is a match
@@ -1035,14 +4311,15 @@
                         }
                     } //end for    
                 }
-                else {
+                else { //no filters used
 
                     for(let i = 0; i < shops.length; i++){ //check for matches
                         if(query == null || query == "" || query == " "){ //if there is an empty or null search, show all pins
                             markerArray[i].setVisible(true);
+                            resultCount = shops.length;
                             break;
                         }
-                        else if(!(query.substring(0, 3) == shops[i].shopName.toUpperCase().substring(0, 3) || query == shops[i].city.toUpperCase() || query == shops[i].zip)){ //if they don't match, hide the pin
+                        else if(!(shops[i].shopName.toUpperCase().includes(query) || shops[i].city.toUpperCase().includes(query) || query == shops[i].zip)){ //if they don't match, hide the pin
                             markerArray[i].setVisible(false);
                         }
                         else { //if there is a match
@@ -1072,7 +4349,7 @@
                     else {
                         markerArray[i].setVisible(true);
                         map.panTo(markerArray[i].getPosition());
-                        map.setZoom(15)
+                        map.setZoom(14)
                         break;
                     }
                 }
