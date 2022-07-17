@@ -4430,6 +4430,8 @@
                     markerArray[i].setVisible(false);
                 }
 
+                var randomShop = Math.floor(Math.random() * shops.length); //get a random number to choose random shop 
+                
                 for(let i = 0; i < shops.length; i++){
                     if(!(shops[i] == shops[randomShop])){ //look for the shop that does match the shop with the random index
                         markerArray[i].setVisible(false);
