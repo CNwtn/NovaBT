@@ -4426,14 +4426,12 @@
            function surpriseShop(){                
                 closeInfoWindow();
 
-                var randomShop = Math.floor(Math.random() * shops.length); //get a random number to choose random shop
-
                 for(let i = 0; i < shops.length; i++){ //reset markers and hide them
                     markerArray[i].setVisible(false);
                 }
 
                 while(!(currentTime >= shops[randomShop][weekdays[currentWeekday]].open && currentTime <= shops[randomShop][weekdays[currentWeekday]].close)) { //make sure the surprise shop is open
-                    randomShop = Math.floor(Math.random() * shops.length);
+                    randomShop = Math.floor(Math.random() * shops.length); //get a random number to choose random shop
                 }                
 
                 for(let i = 0; i < shops.length; i++){
