@@ -632,9 +632,9 @@
                     dessert: 'y',
                     games: 'n',
                     Sunday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Monday: {
                         hours: "10AM - 3PM",
@@ -662,9 +662,9 @@
                         close: "15:00"
                     },
                     Saturday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     }
                 },
                 {
@@ -687,14 +687,14 @@
                         close: "19:30"
                     },
                     Tuesday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Wednesday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Thursday: {
                         hours: "2PM - 7:30PM",
@@ -2442,9 +2442,9 @@
                         close: "19:00"
                     },
                     Tuesday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Wednesday: {
                         hours: "10AM - 7PM",
@@ -2477,9 +2477,9 @@
                     dessert: 'n',
                     games: 'n',
                     Sunday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Monday: {
                         hours: "11:30AM - 6:30PM",
@@ -2507,9 +2507,9 @@
                         close: "18:30"
                     },
                     Saturday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     }
                 },
                 { 
@@ -2532,9 +2532,9 @@
                         close: "19:00"
                     },
                     Tuesday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Wednesday: {
                         hours: "11AM - 7PM",
@@ -3297,9 +3297,9 @@
                         close: "21:00"
                     },
                     Tuesday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Wednesday: {
                         hours: "5:30PM - 9PM",
@@ -3602,14 +3602,14 @@
                     dessert: 'y',
                     games: 'n',
                     Sunday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Monday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Tuesday: {
                         hours: "11AM - 8PM",
@@ -3819,8 +3819,8 @@
                 },
                 {
                     shopName:"TeaDM Street Food Corner",
-                    lat: 38.7297609,
-                    lng: 77.3908073, 
+                    lat: 39.0312327,
+                    lng: -77.4050388, 
                     city: "Sterling",
                     zip: "20164",
                     food: 'y',
@@ -3967,14 +3967,14 @@
                         close: "18:00"
                     },
                     Monday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Tuesday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Wednesday: {
                         hours: "12PM - 9PM",
@@ -4192,19 +4192,19 @@
                         close: "20:00"
                     },
                     Monday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Tuesday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Wednesday: {
-                        hours: "n/a",
-                        open: "n/a",
-                        close: "n/a"
+                        hours: "closed",
+                        open: "closed",
+                        close: "closed"
                     },
                     Thursday: {
                         hours: "11AM - 8PM",
@@ -4424,13 +4424,17 @@
            } //end search results
 
            function surpriseShop(){
+                var randomShop = Math.floor(Math.random() * shops.length); //get a random number to choose random shop
+                
                 closeInfoWindow();
 
                 for(let i = 0; i < shops.length; i++){ //reset markers and hide them
                     markerArray[i].setVisible(false);
                 }
 
-                var randomShop = Math.floor(Math.random() * shops.length); //get a random number to choose random shop
+                while(!(currentTime >= shops[randomShop][weekdays[currentWeekday]].open && currentTime <= shops[randomShop][weekdays[currentWeekday]].close)) { //make sure the surprise shop is open
+                    randomShop = Math.floor(Math.random() * shops.length);
+                }                
 
                 for(let i = 0; i < shops.length; i++){
                     if(!(shops[i] == shops[randomShop])){ //look for the shop that does match the shop with the random index
