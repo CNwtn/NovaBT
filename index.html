@@ -4423,16 +4423,12 @@
                 document.getElementById("results").innerHTML = "Your search returned " + resultCount + " shop(s).";
            } //end search results
 
-           function surpriseShop(){                
+            function surpriseShop(){                
                 closeInfoWindow();
 
                 for(let i = 0; i < shops.length; i++){ //reset markers and hide them
                     markerArray[i].setVisible(false);
                 }
-
-                while(!(currentTime >= shops[randomShop][weekdays[currentWeekday]].open && currentTime <= shops[randomShop][weekdays[currentWeekday]].close)) { //make sure the surprise shop is open
-                    randomShop = Math.floor(Math.random() * shops.length); //get a random number to choose random shop
-                }                
 
                 for(let i = 0; i < shops.length; i++){
                     if(!(shops[i] == shops[randomShop])){ //look for the shop that does match the shop with the random index
