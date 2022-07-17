@@ -4423,10 +4423,10 @@
                 document.getElementById("results").innerHTML = "Your search returned " + resultCount + " shop(s).";
            } //end search results
 
-           function surpriseShop(){
-                var randomShop = Math.floor(Math.random() * shops.length); //get a random number to choose random shop
-                
+           function surpriseShop(){                
                 closeInfoWindow();
+
+                var randomShop = Math.floor(Math.random() * shops.length); //get a random number to choose random shop
 
                 for(let i = 0; i < shops.length; i++){ //reset markers and hide them
                     markerArray[i].setVisible(false);
