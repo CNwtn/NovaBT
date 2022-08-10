@@ -7,78 +7,84 @@ body {
   background-size: 50% 100%;
   margin: 0;
   height: 100%;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-size: 1.25em;
   color: white;
 }
 
 #contentContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: column;
   width: 50%;
   height: 100%;
   float: left;
 }
-
 #contentContainer header {
   margin: auto;
   height: 25%;
 }
-
 #contentContainer header img {
   height: 100%;
 }
-
+#contentContainer header img[src="Nova Bubble Tea v2.png"] {
+  height: 90%;
+}
 #contentContainer header p {
   margin-top: 0;
   text-align: center;
   font-size: 0.5em;
 }
-
+#contentContainer hr {
+  display: none;
+}
 #contentContainer #searchForm {
   width: 100%;
-  height: 15%;
+  height: 20%;
   display: block;
   text-align: center;
+  padding-bottom: 10px;
 }
-
-#contentContainer #searchForm p {
-  margin-bottom: 0;
+#contentContainer #searchForm #searchBox {
+  margin-top: 0;
 }
-
-#contentContainer #searchForm input {
+#contentContainer #searchForm #searchQuery {
   width: 40%;
   height: 30px;
   border-radius: 10px;
   font-size: 1em;
 }
-
-#contentContainer #searchForm select {
-  height: 25px;
-  font-size: 0.9em;
+#contentContainer #searchForm #filterList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
 }
-
+#contentContainer #searchForm [type=checkbox] {
+  width: 2.5em;
+  height: 2em;
+}
+#contentContainer #searchForm p {
+  margin-bottom: 0;
+}
 #contentContainer #searchForm button {
   height: 30px;
   font-size: 0.9em;
 }
-
+#contentContainer #searchForm #results {
+  margin-top: 5%;
+  font-weight: bolder;
+}
 #contentContainer #map {
   width: 100%;
   height: 50%;
   position: relative;
 }
-
-#contentContainer #map iframe {
-  height: 100%;
-  width: 100%;
+#contentContainer a:link {
+  text-decoration: none;
+}
+#contentContainer a:hover {
+  color: palevioletred;
 }
 
 #siteInfo {
@@ -86,21 +92,20 @@ body {
   height: 100%;
   float: right;
 }
-
 #siteInfo p {
   margin: 25% auto 0% auto;
-  width: 50%;
+  width: 75%;
   background-color: rgba(0, 0, 0, 0.75);
   padding: 30px;
+  font-size: 0.95em;
   color: white;
 }
-
 #siteInfo p a {
   font-weight: bold;
   color: white;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   body {
     background-image: none;
   }
@@ -115,34 +120,39 @@ body {
     margin-bottom: 0;
     height: 20%;
   }
+  #contentContainer hr {
+    display: block;
+    width: 100%;
+    color: white;
+  }
   #contentContainer #searchForm {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
+    flex-flow: column;
     height: 30%;
     width: 80%;
     margin: auto;
   }
-  #contentContainer #searchForm input {
+  #contentContainer #searchForm #filterList {
+    font-size: 1em;
+  }
+  #contentContainer #searchForm #searchQuery {
     width: 98%;
-    height: 35px;
-    font-size: 1.15em;
+  }
+  #contentContainer #searchForm[type=checkbox] {
+    width: 2em;
+    height: 2em;
   }
   #contentContainer #searchForm button {
     margin-top: 5px;
     font-size: 1.15em;
   }
-  #contentContainer #searchForm select {
-    font-size: 1.15em;
+  #contentContainer #searchForm #results {
+    font-size: 1.25em;
   }
   #contentContainer #map {
     width: 100%;
     height: 40%;
-    margin-top: 6%;
+    margin-top: 2%;
   }
   #siteInfo {
     float: none;
@@ -156,5 +166,4 @@ body {
     padding: 10px;
     font-size: 0.75em;
   }
-}
-/*# sourceMappingURL=novaBT.css.map */
+}/*# sourceMappingURL=novaBT.css.map */
