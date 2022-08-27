@@ -4459,12 +4459,16 @@ function initMap() {
     var shopOpenInfo;
     var shopClosedInfo;
     map = new google.maps.Map(document.getElementById("map"), mapDetails);
-        
+
     for(let i = 0; i < shops.length; i++){ //add markers for all 
         var shopOpeningDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].open.substring(0, 2), shops[i][weekdays[currentWeekday]].open.substring(3));
+        var shopClosingDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
+        var openDayOfMonth = today.getDate();
         var closeDayOfMonth = today.getDate();
-        closeDayOfMonth += shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0; //if it closes between 12AM and 9AM
-        var shopClosingDate = new Date(today.getFullYear(), today.getMonth(), closeDayOfMonth, shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
+        openDayOfMonth -= today < shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0;
+        closeDayOfMonth += today >= shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0")  ? 1 : 0; //for shops that close after midnight. move to the next day
+        shopOpeningDate.setDate(openDayOfMonth);
+        shopClosingDate.setDate(closeDayOfMonth);
         splitShopName = shops[i].shopName.split(" ");
         shopOpenInfo = "<b style='font-size: 1.25em; color: black'>" + shops[i].shopName + "</b>" + "<br><span style='color: green'><i>Open</i></span><span style='color: black'><br>" + shops[i][weekdays[currentWeekday]].hours + "</span><br>";
         shopClosedInfo = "<b style='font-size: 1.25em; color: black'>" + shops[i].shopName + "</b>" + "<br><span style='color: red'><i>Closed</i></span><span style='color: black'><br>" + shops[i][weekdays[currentWeekday]].hours + "</span><br>"; 
@@ -4550,9 +4554,13 @@ function searchResults(){
         
         for(let i = 0; i < shops.length; i++){ //check each shop 
             var shopOpeningDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].open.substring(0, 2), shops[i][weekdays[currentWeekday]].open.substring(3));
+            var shopClosingDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
+            var openDayOfMonth = today.getDate();
             var closeDayOfMonth = today.getDate();
-            closeDayOfMonth += shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0; //if it closes between 12AM and 9AM
-            var shopClosingDate = new Date(today.getFullYear(), today.getMonth(), closeDayOfMonth, shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
+            openDayOfMonth -= today < shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0;
+            closeDayOfMonth += today >= shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0")  ? 1 : 0; //for shops that close after midnight. move to the next day
+            shopOpeningDate.setDate(openDayOfMonth);
+            shopClosingDate.setDate(closeDayOfMonth);
 
             for(let j = 1; j < filters.length; j++){
                 if(filters[j].checked == true){ 
