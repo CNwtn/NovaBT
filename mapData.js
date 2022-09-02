@@ -1063,6 +1063,51 @@ let shops = [
         }
     },
     {
+        shopName:"Gong Cha - Centreville",
+        lat: 38.8940336069994,
+        lng: -77.0777842511886,
+        city: "Centreville",
+        zip: "20121",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11:00AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Monday: {
+            hours: "11:00AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Tuesday: {
+            hours: "11:00AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Wednesday: {
+            hours: "11:00AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Thursday: {
+            hours: "11:00AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Friday: {
+            hours: "11:00AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Saturday: {
+            hours: "11:00AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        }
+    },
+    {
         shopName:"Gong Cha - Rosslyn",
         lat: 38.8940336069994,
         lng: -77.0777842511886,
