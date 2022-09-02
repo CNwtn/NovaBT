@@ -1064,8 +1064,8 @@ let shops = [
     },
     {
         shopName:"Gong Cha - Centreville",
-        lat: 38.8940336069994,
-        lng: -77.0777842511886,
+        lat: 38.83601090473298, 
+        lng: -77.42538161466828,
         city: "Centreville",
         zip: "20121",
         food: 'n',
