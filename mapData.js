@@ -163,7 +163,7 @@ let shops = [
         }
     },
     {
-        shopName:"Ben Gong's Tea - Annandale",
+        shopName:"Ben Gong's Tea",
         lat: 38.8310810997249,
         lng: -77.1884120341947,
         city: "Annandale",
@@ -208,7 +208,7 @@ let shops = [
         }
     },
     {
-        shopName:"Ben Gong's Tea - Centreville",
+        shopName:"Ben Gong's Tea",
         lat: 38.8381926231755,
         lng: -77.4398033183466,
         city: "Centreville",
@@ -253,7 +253,7 @@ let shops = [
         }
     },
     {
-        shopName:"Ben Gong's Tea - Fairfax",
+        shopName:"Ben Gong's Tea",
         lat: 38.856461861476774, 
         lng: -77.31560336595811,
         city: "Fairfax",
@@ -343,7 +343,7 @@ let shops = [
         }
     },
     {
-        shopName:"Bobapop Tea Bar - Merrifield",
+        shopName:"Bobapop Tea Bar",
         lat: 38.8737540086376,
         lng: -77.225153162887,
         city: "Falls Church",
@@ -793,7 +793,7 @@ let shops = [
         }
     },
     {
-        shopName: "Donutchew Annandale",
+        shopName: "Donutchew",
         lat: 38.830841791098976, 
         lng: -77.18833646423234,
         city: "Annandale",
@@ -838,7 +838,7 @@ let shops = [
         }
     },
     {
-        shopName: "Donutchew Centreville",
+        shopName: "Donutchew",
         lat: 38.827483260668714, 
         lng: -77.4394327713058,
         city: "Centreville",
@@ -883,7 +883,7 @@ let shops = [
         }
     },
     {
-        shopName: "Donutchew Fair Oaks",
+        shopName: "Donutchew",
         lat: 38.862855582422505, 
         lng: -77.35885417759194,
         city: "Fairfax",
@@ -1063,7 +1063,7 @@ let shops = [
         }
     },
     {
-        shopName:"Gong Cha - Centreville",
+        shopName:"Gong Cha",
         lat: 38.83601090473298, 
         lng: -77.42538161466828,
         city: "Centreville",
@@ -1108,7 +1108,7 @@ let shops = [
         }
     },
     {
-        shopName:"Gong Cha - Rosslyn",
+        shopName:"Gong Cha",
         lat: 38.8940336069994,
         lng: -77.0777842511886,
         city: "Arlington",
@@ -1153,7 +1153,7 @@ let shops = [
         }
     },
     {
-        shopName:"Gong Cha - Annandale",
+        shopName:"Gong Cha",
         lat: 38.8315102389412,
         lng: -77.1970042806781,
         city: "Annandale",
@@ -1198,7 +1198,7 @@ let shops = [
         }
     },
     {
-        shopName:"Gong Cha - Chantilly",
+        shopName:"Gong Cha",
         lat: 38.8947072279681,
         lng: -77.4266560875818,
         city: "Chantilly",
@@ -1243,7 +1243,7 @@ let shops = [
         }
     },    
     {
-        shopName:"Gong Cha - Eden Center",
+        shopName:"Gong Cha",
         lat: 38.8735944428943,
         lng: -77.1549384654874,
         city: "Falls Church",
@@ -1288,7 +1288,7 @@ let shops = [
         }
     },
     {
-        shopName:"Gong Cha - Springfield",
+        shopName:"Gong Cha",
         lat: 38.7814936827259,
         lng: -77.1871016928668,
         city: "Springfield",
@@ -1333,7 +1333,7 @@ let shops = [
         }
     },
     {
-        shopName:"Gong Cha the Boro",
+        shopName:"Gong Cha",
         lat: 38.9245599334436,
         lng: -77.2338069102715,
         city: "McLean",
@@ -1513,7 +1513,7 @@ let shops = [
         }
     },
     {
-        shopName:"Java Loco Coffee & Bubble Tea Mt. Vernon",
+        shopName:"Java Loco Coffee & Bubble Tea",
         lat: 38.7499947751215,
         lng: -77.0847515842222,
         city: "Alexandria",
@@ -1558,7 +1558,7 @@ let shops = [
         }
     },
     {
-        shopName:"Java Loco Coffee & Bubble Tea Van Dorn",
+        shopName:"Java Loco Coffee & Bubble Tea",
         lat: 38.8105290326835,
         lng: -77.1337174242868,
         city: "Alexandria",
@@ -1603,7 +1603,7 @@ let shops = [
         }
     },
     {
-        shopName: "Java Loco Coffee & Bubble Tea Tysons",
+        shopName: "Java Loco Coffee & Bubble Tea",
         lat: 38.904580645757065,
         lng: -77.20402457892193,
         city: "Falls Church",
@@ -1738,7 +1738,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kokee Tea - Fair Oaks",
+        shopName:"Kokee Tea",
         lat: 38.8623953872683,
         lng: -77.3592240968629,
         city: "Fairfax",
@@ -1783,7 +1783,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kokee Tea - Fairfax (Main St.)",
+        shopName:"Kokee Tea",
         lat: 38.8423360237354,
         lng: -77.2759605506546,
         city: "Fairfax",
@@ -1828,7 +1828,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kokee Tea - Springfield Mall",
+        shopName:"Kokee Tea",
         lat: 38.7745055152852,
         lng: -77.1738556333021,
         city: "Springfield",
@@ -1918,7 +1918,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Annandale",
+        shopName:"Kung Fu Tea",
         lat: 38.8261385135315,
         lng: -77.2136698256676,
         city: "Annandale",
@@ -1963,7 +1963,7 @@ let shops = [
         }
     },
     {
-        shopName: "Kung Fu Tea - Ashburn",
+        shopName: "Kung Fu Tea",
         lat: 39.04479231001664,
         lng: -77.47524398675327,
         city: "Ashburn",
@@ -2008,7 +2008,7 @@ let shops = [
         }
     },
     {
-        shopName: "Kung Fu Tea - Ashburn",
+        shopName: "Kung Fu Tea",
         lat: 39.00732558877695, 
         lng: -77.48677804829565,
         city: "Ashburn",
@@ -2053,7 +2053,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Manassas",
+        shopName:"Kung Fu Tea",
         lat: 38.7853614256071,
         lng: -77.5166666659609,
         city: "Manassas",
@@ -2098,7 +2098,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Burke",
+        shopName:"Kung Fu Tea",
         lat: 38.7783133721759,
         lng: -77.27335341219,
         city: "Burke",
@@ -2143,7 +2143,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Centreville",
+        shopName:"Kung Fu Tea",
         lat: 38.839549700136,
         lng: -77.4262855261479,
         city: "Centreville",
@@ -2188,7 +2188,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Clarendon",
+        shopName:"Kung Fu Tea",
         lat: 38.8875666949935,
         lng: -77.0946597662965,
         city: "Arlington",
@@ -2233,7 +2233,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Dulles Town Center",
+        shopName:"Kung Fu Tea",
         lat: 39.0324299702912,
         lng: -77.4239606539062,
         city: "Sterling",
@@ -2278,7 +2278,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Lorton",
+        shopName:"Kung Fu Tea",
         lat: 38.7024194203804,
         lng: -77.2200804890341,
         city: "Lorton",
@@ -2323,7 +2323,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Reston",
+        shopName:"Kung Fu Tea",
         lat: 38.9367537313026,
         lng: -77.3633107190579,
         city: "Reston",
@@ -2368,7 +2368,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Springfield",
+        shopName:"Kung Fu Tea",
         lat: 38.7731544250924,
         lng: -77.1846254846006,
         city: "Springfield",
@@ -2413,7 +2413,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Sterling",
+        shopName:"Kung Fu Tea",
         lat: 39.0163012761229,
         lng: -77.3769213303948,
         city: "Sterling",
@@ -2458,7 +2458,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Tysons",
+        shopName:"Kung Fu Tea",
         lat: 38.9180185896004,
         lng: -77.2229472504969,
         city: "McLean",
@@ -2503,7 +2503,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Tysons",
+        shopName:"Kung Fu Tea",
         lat: 38.917769386070944,
         lng: -77.2212804801252,
         city: "McLean",
@@ -2548,7 +2548,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Winchester",
+        shopName:"Kung Fu Tea",
         lat: 39.16010333871058, 
         lng: -78.16392569220484,
         city: "Winchester",
@@ -2593,7 +2593,7 @@ let shops = [
         }
     },
     {
-        shopName:"Kung Fu Tea - Woodbridge",
+        shopName:"Kung Fu Tea",
         lat: 38.6746178077865,
         lng: -77.3335860367377,
         city: "Woodbridge",
@@ -2773,7 +2773,7 @@ let shops = [
         }
     },
     { 
-        shopName:"Mochinut - Leesburg",
+        shopName:"Mochinut",
         lat: 39.09006776588878, 
         lng: -77.52487524111483,
         city: "Leesburg",
@@ -2818,7 +2818,7 @@ let shops = [
         }
     },
     {
-        shopName:"Möge Tee - Falls Church",
+        shopName:"Möge Tee",
         lat: 38.8699795427819,
         lng: -77.1454806527237,
         city: "Falls Church",
@@ -2863,7 +2863,7 @@ let shops = [
         }
     },
     {
-        shopName:"Möge Tee - Tysons",
+        shopName:"Möge Tee",
         lat: 38.9171475665691,
         lng: -77.2229865838858,
         city: "McLean",
@@ -2908,7 +2908,7 @@ let shops = [
         }
     },
     {
-        shopName:"Mr. Wish - Eden Center",
+        shopName:"Mr. Wish",
         lat: 38.874082778522,
         lng: -77.1548394299928,
         city: "Falls Church",
@@ -2953,7 +2953,7 @@ let shops = [
         }
     },
     {
-        shopName:"Mr. Wish - Herndon",
+        shopName:"Mr. Wish",
         lat: 38.9618777909721,
         lng: -77.4008801129001,
         city: "Herndon",
@@ -3043,7 +3043,7 @@ let shops = [
         }
     },
     {
-        shopName:"One Tea House - Falls Church",
+        shopName:"One Tea House",
         lat: 38.874268313865,
         lng: -77.1540431666506,
         city: "Falls Church",
@@ -3133,7 +3133,7 @@ let shops = [
         }
     },
     {
-        shopName:"Panda Tea House - Arlington",
+        shopName:"Panda Tea House",
         lat: 38.8629927097441,
         lng: -77.0609751055611,
         city: "Arlington",
@@ -3178,7 +3178,7 @@ let shops = [
         }
     },
     {
-        shopName:"Panda Tea House - Sterling",
+        shopName:"Panda Tea House",
         lat: 39.0316635140024,
         lng: -77.4229714725042,
         city: "Sterling",
@@ -3223,7 +3223,52 @@ let shops = [
         }
     },
     {
-        shopName:"Sharetea Fairfax",
+        shopName:"RareTea",
+        lat: 38.788007081397886,
+        lng: -77.60639989997517,
+        city: "Gainesville",
+        zip: "20155",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "12PM - 7PM",
+            open: "12:00",
+            close: "19:00"
+        },
+        Monday: {
+            hours: "12PM - 6PM",
+            open: "12:00",
+            close: "18:00"
+        },
+        Tuesday: {
+            hours: "12PM - 6PM",
+            open: "12:00",
+            close: "18:00"
+        },
+        Wednesday: {
+            hours: "12PM - 6PM",
+            open: "12:00",
+            close: "18:00"
+        },
+        Thursday: {
+            hours: "12PM - 6PM",
+            open: "12:00",
+            close: "18:00"
+        },
+        Friday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        }
+    },
+    {
+        shopName:"Sharetea",
         lat: 38.8507421094172,
         lng: -77.3335014473066,
         city: "Fairfax",
@@ -3268,7 +3313,7 @@ let shops = [
         }
     },
     {
-        shopName:"Sharetea Falls Church",
+        shopName:"Sharetea",
         lat: 38.8722653113124,
         lng: -77.1524007341553,
         city: "Falls Church",
@@ -3313,7 +3358,7 @@ let shops = [
         }
     },
     {
-        shopName:"Shilla Bakery & Café Annandale",
+        shopName:"Shilla Bakery & Café",
         lat: 38.8288698722424,
         lng: -77.189431244102,
         city: "Annandale",
@@ -3358,7 +3403,7 @@ let shops = [
         }
     },
     {
-        shopName:"Shilla Patisserie Café Centreville",
+        shopName:"Shilla Patisserie Café",
         lat: 38.8367798932543,
         lng: -77.4339432752115,
         city: "Centreville",
@@ -3403,7 +3448,7 @@ let shops = [
         }
     },
     {
-        shopName:"Shilla Bakery & Café Chantilly",
+        shopName:"Shilla Bakery & Café",
         lat: 38.8960492938715,
         lng: -77.4264649877699,
         city: "Chantilly",
@@ -3448,7 +3493,7 @@ let shops = [
         }
     },
     {
-        shopName:"Shilla Bakery & Café Tysons",
+        shopName:"Shilla Bakery & Café",
         lat: 38.9176717434455,
         lng: -77.2213634349418,
         city: "McLean",
@@ -3718,7 +3763,7 @@ let shops = [
         }
     },
     {
-        shopName:"Tea Do Annandale",
+        shopName:"Tea Do",
         lat: 38.8281778995173,
         lng: -77.1891586699401,
         city: "Annandale",
@@ -3763,7 +3808,7 @@ let shops = [
         }
     },
     {
-        shopName:"Tea Do Fairfax",
+        shopName:"Tea Do",
         lat: 38.853727795638534, 
         lng: -77.32754221634724,
         city: "Fairfax",
@@ -3808,7 +3853,7 @@ let shops = [
         }
     },
     {
-        shopName:"Teabreak Pho & Boba Herndon",
+        shopName:"Teabreak Pho & Boba",
         lat: 38.9670382678471,
         lng: -77.3678483963258,
         city: "Herndon",
@@ -3853,7 +3898,7 @@ let shops = [
         }
     },
     {
-        shopName:"Teabreak Pho & Boba Sterling",
+        shopName:"Teabreak Pho & Boba",
         lat: 39.029078941636,
         lng: -77.3890046530384,
         city: "Sterling",
@@ -3898,7 +3943,7 @@ let shops = [
         }
     },
     {
-        shopName:"TeaDM - Fairfax",
+        shopName:"TeaDM",
         lat: 38.8652842168384,
         lng: -77.2716417585991,
         city: "Fairfax",
@@ -4213,7 +4258,7 @@ let shops = [
         }
     },
     {
-        shopName:"Vivi Bubble Tea Fairfax",
+        shopName:"Vivi Bubble Tea",
         lat: 38.8442480596345,
         lng: -77.2907886325075,
         city: "Fairfax",
@@ -4258,7 +4303,7 @@ let shops = [
         }
     },
     {
-        shopName:"Vivi Bubble Tea Eden Center",
+        shopName:"Vivi Bubble Tea",
         lat: 38.874170443744,
         lng: -77.1551068734337,
         city: "Falls Church",
@@ -4515,8 +4560,8 @@ function initMap() {
         shopOpeningDate.setDate(openDayOfMonth);
         shopClosingDate.setDate(closeDayOfMonth);
         splitShopName = shops[i].shopName.split(" ");
-        shopOpenInfo = "<b style='font-size: 1.25em; color: black'>" + shops[i].shopName + "</b>" + "<br><span style='color: green'><i>Open</i></span><span style='color: black'><br>" + shops[i][weekdays[currentWeekday]].hours + "</span><br>";
-        shopClosedInfo = "<b style='font-size: 1.25em; color: black'>" + shops[i].shopName + "</b>" + "<br><span style='color: red'><i>Closed</i></span><span style='color: black'><br>" + shops[i][weekdays[currentWeekday]].hours + "</span><br>"; 
+        shopOpenInfo = "<b style='font-size: 1.25em; color: black'>" + shops[i].shopName + "<br>" + shops[i].city + "</b><br><span style='color: green'><i>Open</i></span><span style='color: black'><br>" + shops[i][weekdays[currentWeekday]].hours + "</span><br>";
+        shopClosedInfo = "<b style='font-size: 1.25em; color: black'>" + shops[i].shopName + "<br>" + shops[i].city + "</b><br><span style='color: red'><i>Closed</i></span><span style='color: black'><br>" + shops[i][weekdays[currentWeekday]].hours + "</span><br>"; 
         shopInfo = ((shopOpeningDate < today) && (today < shopClosingDate)) ? shopOpenInfo:shopClosedInfo;
 
         if(shops[i].food == 'y'){
