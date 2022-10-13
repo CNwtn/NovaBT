@@ -4759,52 +4759,53 @@ function surpriseShop(){
             var closeDayOfMonth = today.getDate();
             closeDayOfMonth += shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0; //if it closes between 12AM and 9AM
             var shopClosingDate = new Date(today.getFullYear(), today.getMonth(), closeDayOfMonth, shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
-
+            
             for(let j = 0; j < filters.length; j++){ 
+
                 if(j == 0){ //input box 
                     if(shops[i].city.toUpperCase().includes(query) || query == shops[i].zip){ 
                         filterMatch = true;
-                        continue; 
                     }
                     else {
                         mismatchShops.push(shops[i]); 
                         filterMatch = false;
                         break;
                     }
-                } 
-                if(j != 0 && filters[j].checked == true){
-                    if(j == 1){ //currently open
-                        if(today >= shopClosingDate && today <= shopOpeningDate){ //if the shop is open
-                            filterMatch = true; 
-                            continue;
+                }
+                else if(j != 0 && filters[j].checked == true){ 
+
+                    if(j == 1){ //because 1 = currently open filter
+                        if(today >= shopOpeningDate && today <= shopClosingDate){ //if the shop is open
+                            filterMatch = true;
                         }
                         else {
-                            mismatchShops.push(shops[i]); 
+                            mismatchShops.push(shops[i]);
                             filterMatch = false;
                             break; //shop doesn't meet filter requirements so it isn't needed
                         }
                     }
                     if(j > 1 && shops[i][filters[j].value] == 'y'){ //shop match found
-                        filterMatch = true;  
+                        filterMatch = true; 
                     }
                     else if(j > 1 && shops[i][filters[j].value] == 'n') {
-                        mismatchShops.push(shops[i]); 
+                        mismatchShops.push(shops[i]);
                         filterMatch = false;
-                        break; 
+                        break;
                     }
                 }
             } //end inner for
- 
+           
             if(filterMatch == true){ 
-                if(tempSurpriseShops.length == 0){ 
+                
+                if(tempSurpriseShops.length == 0){
                     tempSurpriseShops.push(shops[i]); 
                     tempSurpriseMarkerArr.push(markerArray[i]);
                 }
-                else{ 
+                else { 
                     for(let k = 0; k < tempSurpriseShops.length; k++){ //check for duplicates
                         if(shops[i].shopName != tempSurpriseShops[k].shopName){ //not a duplicate
-                            for(let x = 0; x < mismatchShops.length; x++){ //check if on list of shops that don't meet reqs
-                                if(shops[i].shopName == mismatchShops[x].shopName){ //is on list
+                            for(let m = 0; m < mismatchShops.length; m++){ //check if on list of shops that don't meet reqs
+                                if(shops[i].shopName == mismatchShops[m].shopName && shops[i].city == mismatchShops[m].city){ //is on list
                                     duplicateFound = true;
                                     break;
                                 }
@@ -4822,13 +4823,13 @@ function surpriseShop(){
                     }
                 }
             }
-
+            duplicateFound = false;
             filterMatch = false; //reset for next iteration
         } //end outer for    
         
         if(tempSurpriseShops.length > 0){ //if a keyword or filter was used
-            randomShop = Math.floor(Math.random() * tempSurpriseShops.length); //get a random number to choose random shop 
-
+            randomShop = Math.ceil(Math.random() * tempSurpriseShops.length - 1); //get a random number to choose random shop 
+            
             for(let i = 0; i < tempSurpriseShops.length; i++){ 
                 if(tempSurpriseShops[i] != tempSurpriseShops[randomShop]){ //look for the shop that does match the shop with the random index
                     tempSurpriseMarkerArr[i].setVisible(false);
@@ -4848,7 +4849,7 @@ function surpriseShop(){
         filterUsed = false;
     } 
     else { //no filters used
-        randomShop = Math.floor(Math.random() * shops.length); 
+        randomShop = Math.ceil(Math.random() * shops.length); 
         
         for(let i = 0; i < shops.length; i++){
             if(!(shops[i] == shops[randomShop])){ 
@@ -4863,5 +4864,5 @@ function surpriseShop(){
         }
 
         document.getElementById("results").innerHTML = ""; //it will always be one shop, so it can stay blank
-    }
+    } 
 } //end surprise Shop
