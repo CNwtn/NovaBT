@@ -1294,8 +1294,8 @@ let shops = [
         city: "Springfield",
         zip: "22150",
         food: 'n',
-        dessert: 'n',
-        games: 'n',
+        dessert: 'y',
+        games: 'y',
         Sunday: {
             hours: "11:30AM - 9PM",
             open: "11:30",
@@ -1870,6 +1870,51 @@ let shops = [
             hours: "11:00AM - 8PM",
             open: "11:00",
             close: "20:00"
+        }
+    },
+    {
+        shopName:"Kokee Tea",
+        lat: 38.90566535869604,
+        lng: -77.54350690846232,
+        city: "South Riding",
+        zip: "20152",
+        food: 'y',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "12:00PM - 7PM",
+            open: "12:00",
+            close: "19:00"
+        },
+        Monday: {
+            hours: "8:00AM - 8PM",
+            open: "08:00",
+            close: "20:00"
+        },
+        Tuesday: {
+            hours: "8:00AM - 8PM",
+            open: "08:00",
+            close: "20:00"
+        },
+        Wednesday: {
+            hours: "8:00AM - 8PM",
+            open: "08:00",
+            close: "20:00"
+        },
+        Thursday: {
+            hours: "8:00AM - 8PM",
+            open: "08:00",
+            close: "20:00"
+        },
+        Friday: {
+            hours: "8:00AM - 9PM",
+            open: "08:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "8:00AM - 9PM",
+            open: "08:00",
+            close: "21:00"
         }
     },
     {
