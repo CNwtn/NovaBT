@@ -388,6 +388,51 @@ let shops = [
         }
     },
     {
+        shopName:"Bobapop Tea Bar",
+        lat: 38.7651000792815,
+        lng: -77.15265030403896,
+        city: "Alexandria",
+        zip: "22310",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Monday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
+        }
+    },
+    {
         shopName:"Breeze Bakery Café",
         lat: 38.83358404,
         lng: -77.21002415,
