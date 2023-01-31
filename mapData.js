@@ -98,7 +98,7 @@ let shops = [
         }
     },
     {
-        shopName:"Argo Tea - Fairfax (temporarily closed)",
+        shopName:"Argo Tea",
         lat: 38.83198071392536, 
         lng: -77.30719461737431,
         city: "Fairfax",
