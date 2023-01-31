@@ -97,17 +97,52 @@ let shops = [
             close: "22:30"
         }
     },
-    /*{
+    {
         shopName:"Argo Tea - Fairfax (temporarily closed)",
-        lat: 38.83218252771181, 
-        lng: -77.30675388685536,
+        lat: 38.83198071392536, 
+        lng: -77.30719461737431,
         city: "Fairfax",
         zip: "22030",
         food: 'y',
         dessert: 'y',
-        games: 'n'
+        games: 'n',
+        Sunday: {
+            hours: "Closed for Today",
+            open: "Closed for Today",
+            close: "Closed for Today"
+        },
+        Monday: {
+            hours: "8AM - 2PM",
+            open: "08:00",
+            close: "14:00"
+        },
+        Tuesday: {
+            hours: "8AM - 2PM",
+            open: "08:00",
+            close: "14:00"
+        },
+        Wednesday: {
+            hours: "8AM - 2PM",
+            open: "08:00",
+            close: "14:00"
+        },
+        Thursday: {
+            hours: "8AM - 2PM",
+            open: "08:00",
+            close: "14:00"
+        },
+        Friday: {
+            hours: "8AM - 2PM",
+            open: "08:00",
+            close: "14:00"
+        },
+        Saturday: {
+            hours: "Closed for Today",
+            open: "Closed for Today",
+            close: "Closed for Today"
+        }
     },
-    {
+    /*{
         shopName:"Argo Tea - Alexandria (temporarily closed)",
         lat: 38.80096618294373,
         lng: -77.06383878720916,
@@ -2004,6 +2039,51 @@ let shops = [
         Saturday: {
             hours: "10:00AM - 9PM",
             open: "10:00",
+            close: "21:00"
+        }
+    },
+    {
+        shopName:"Ku Tea Coffee & Tea Town",
+        lat: 38.6364693872566, 
+        lng: -77.29736776883607,
+        city: "Woodbridge",
+        zip: "22192",
+        food: 'n',
+        dessert: 'y',
+        games: 'y',
+        Sunday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Monday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
             close: "21:00"
         }
     },
