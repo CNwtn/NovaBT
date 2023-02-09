@@ -1054,8 +1054,8 @@ let shops = [
     // },
     {
         shopName: "Donutchew",
-        lat: 38.74230068601717, 
-        lng: -77.16313914143048,
+        lat: 38.90146187509499, 
+        lng: -77.2655899066544,
         city: "Vienna",
         zip: "22180",
         food: 'n',
