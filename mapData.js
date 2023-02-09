@@ -1007,6 +1007,96 @@ let shops = [
             close: "21:00"
         }
     },
+    // {
+    //     shopName: "Donutchew",
+    //     lat: 38.74230068601717, 
+    //     lng: -77.16313914143048,
+    //     city: "Kingstowne",
+    //     zip: "22315",
+    //     food: 'y',
+    //     dessert: 'y',
+    //     games: 'n',
+    //     Sunday: {
+    //         hours: "11AM - 7PM",
+    //         open: "11:00",
+    //         close: "19:00"
+    //     },
+    //     Monday: {
+    //         hours: "11AM - 8PM",
+    //         open: "11:00",
+    //         close: "20:00"
+    //     },
+    //     Tuesday: {
+    //         hours: "11AM - 8PM",
+    //         open: "11:00",
+    //         close: "20:00"
+    //     },
+    //     Wednesday: {
+    //         hours: "11AM - 8PM",
+    //         open: "11:00",
+    //         close: "20:00"
+    //     },
+    //     Thursday: {
+    //         hours: "11AM - 8PM",
+    //         open: "11:00",
+    //         close: "20:00"
+    //     },
+    //     Friday: {
+    //         hours: "10AM - 9PM",
+    //         open: "10:00",
+    //         close: "21:00"
+    //     },
+    //     Saturday: {
+    //         hours: "10AM - 9PM",
+    //         open: "10:00",
+    //         close: "21:00"
+    //     }
+    // },
+    {
+        shopName: "Donutchew",
+        lat: 38.74230068601717, 
+        lng: -77.16313914143048,
+        city: "Vienna",
+        zip: "22180",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "10AM - 7PM",
+            open: "10:00",
+            close: "19:00"
+        },
+        Monday: {
+            hours: "9AM - 8PM",
+            open: "09:00",
+            close: "20:00"
+        },
+        Tuesday: {
+            hours: "9AM - 8PM",
+            open: "09:00",
+            close: "20:00"
+        },
+        Wednesday: {
+            hours: "9AM - 8PM",
+            open: "09:00",
+            close: "20:00"
+        },
+        Thursday: {
+            hours: "9AM - 8PM",
+            open: "09:00",
+            close: "20:00"
+        },
+        Friday: {
+            hours: "9AM - 8PM",
+            open: "09:00",
+            close: "20:00"
+        },
+        Saturday: {
+            hours: "9AM - 8PM",
+            open: "09:00",
+            close: "20:00"
+        }
+    },
     {
         shopName:"Empress Pearl Milk Tea",
         lat: 39.1377095843293,
@@ -3797,6 +3887,51 @@ let shops = [
             close: "21:00"
         }
     },
+    // {
+    //     shopName:"Sol Tea M",
+    //     lat: 38.637981985322604, 
+    //     lng: -77.29974897681942,
+    //     city: "Woodbridge",
+    //     zip: "22192",
+    //     food: 'n',
+    //     dessert: 'n',
+    //     games: 'n',
+    //     Sunday: {
+    //         hours: "12PM - 9PM",
+    //         open: "12:00",
+    //         close: "21:00"
+    //     },
+    //     Monday: {
+    //         hours: "10AM - 9PM",
+    //         open: "10:00",
+    //         close: "21:00"
+    //     },
+    //     Tuesday: {
+    //         hours: "10AM - 9PM",
+    //         open: "10:00",
+    //         close: "21:00"
+    //     },
+    //     Wednesday: {
+    //         hours: "10AM - 9PM",
+    //         open: "10:00",
+    //         close: "21:00"
+    //     },
+    //     Thursday: {
+    //         hours: "10AM - 9PM",
+    //         open: "10:00",
+    //         close: "21:00"
+    //     },
+    //     Friday: {
+    //         hours: "10AM - 10PM",
+    //         open: "10:00",
+    //         close: "22:00"
+    //     },
+    //     Saturday: {
+    //         hours: "10AM - 10PM",
+    //         open: "10:00",
+    //         close: "22:00"
+    //     }
+    // },
     {
         shopName:"Spill the Tea",
         lat: 38.8125784050187,
