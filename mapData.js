@@ -1007,51 +1007,51 @@ let shops = [
             close: "21:00"
         }
     },
-    // {
-    //     shopName: "Donutchew",
-    //     lat: 38.74230068601717, 
-    //     lng: -77.16313914143048,
-    //     city: "Kingstowne",
-    //     zip: "22315",
-    //     food: 'y',
-    //     dessert: 'y',
-    //     games: 'n',
-    //     Sunday: {
-    //         hours: "11AM - 7PM",
-    //         open: "11:00",
-    //         close: "19:00"
-    //     },
-    //     Monday: {
-    //         hours: "11AM - 8PM",
-    //         open: "11:00",
-    //         close: "20:00"
-    //     },
-    //     Tuesday: {
-    //         hours: "11AM - 8PM",
-    //         open: "11:00",
-    //         close: "20:00"
-    //     },
-    //     Wednesday: {
-    //         hours: "11AM - 8PM",
-    //         open: "11:00",
-    //         close: "20:00"
-    //     },
-    //     Thursday: {
-    //         hours: "11AM - 8PM",
-    //         open: "11:00",
-    //         close: "20:00"
-    //     },
-    //     Friday: {
-    //         hours: "10AM - 9PM",
-    //         open: "10:00",
-    //         close: "21:00"
-    //     },
-    //     Saturday: {
-    //         hours: "10AM - 9PM",
-    //         open: "10:00",
-    //         close: "21:00"
-    //     }
-    // },
+    {
+        shopName: "Donutchew",
+        lat: 38.74227844863788, 
+        lng: -77.16311751901736,
+        city: "Alexandria",
+        zip: "22315",
+        food: 'y',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "9AM - 7PM",
+            open: "09:00",
+            close: "19:00"
+        },
+        Monday: {
+            hours: "8AM - 8PM",
+            open: "08:00",
+            close: "20:00"
+        },
+        Tuesday: {
+            hours: "8AM - 8PM",
+            open: "08:00",
+            close: "20:00"
+        },
+        Wednesday: {
+            hours: "8AM - 8PM",
+            open: "08:00",
+            close: "20:00"
+        },
+        Thursday: {
+            hours: "8AM - 8PM",
+            open: "08:00",
+            close: "20:00"
+        },
+        Friday: {
+            hours: "8AM - 8PM",
+            open: "08:00",
+            close: "20:00"
+        },
+        Saturday: {
+            hours: "8AM - 8PM",
+            open: "08:00",
+            close: "20:00"
+        }
+    },
     {
         shopName: "Donutchew",
         lat: 38.90146187509499, 
