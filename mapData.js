@@ -3887,51 +3887,51 @@ let shops = [
             close: "21:00"
         }
     },
-    // {
-    //     shopName:"Sol Tea M",
-    //     lat: 38.637981985322604, 
-    //     lng: -77.29974897681942,
-    //     city: "Woodbridge",
-    //     zip: "22192",
-    //     food: 'n',
-    //     dessert: 'n',
-    //     games: 'n',
-    //     Sunday: {
-    //         hours: "12PM - 9PM",
-    //         open: "12:00",
-    //         close: "21:00"
-    //     },
-    //     Monday: {
-    //         hours: "10AM - 9PM",
-    //         open: "10:00",
-    //         close: "21:00"
-    //     },
-    //     Tuesday: {
-    //         hours: "10AM - 9PM",
-    //         open: "10:00",
-    //         close: "21:00"
-    //     },
-    //     Wednesday: {
-    //         hours: "10AM - 9PM",
-    //         open: "10:00",
-    //         close: "21:00"
-    //     },
-    //     Thursday: {
-    //         hours: "10AM - 9PM",
-    //         open: "10:00",
-    //         close: "21:00"
-    //     },
-    //     Friday: {
-    //         hours: "10AM - 10PM",
-    //         open: "10:00",
-    //         close: "22:00"
-    //     },
-    //     Saturday: {
-    //         hours: "10AM - 10PM",
-    //         open: "10:00",
-    //         close: "22:00"
-    //     }
-    // },
+    {
+        shopName:"Sol Tea M",
+        lat: 38.637981985322604, 
+        lng: -77.29974897681942,
+        city: "Woodbridge",
+        zip: "22192",
+        food: 'n',
+        dessert: 'y',
+        games: 'y',
+        Sunday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Monday: {
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "10AM - 10PM",
+            open: "10:00",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "10AM - 10PM",
+            open: "10:00",
+            close: "22:00"
+        }
+    },
     {
         shopName:"Spill the Tea",
         lat: 38.8125784050187,
@@ -4515,6 +4515,51 @@ let shops = [
             hours: "12PM - 9PM",
             open: "12:00",
             close: "21:00"
+        }
+    },
+    {
+        shopName:"Tsaocaa (Tsaocha)",
+        lat: 39.03575436682891, 
+        lng: -77.50054025889666,
+        city: "Ashburn",
+        zip: "20147",
+        food: 'y',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Monday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
         }
     },
     {
