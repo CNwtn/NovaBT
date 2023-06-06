@@ -2224,8 +2224,8 @@ let shops = [
     },
     {
         shopName: "Kung Fu Tea",
-        lat: 39.04479231001664,
-        lng: -77.47524398675327,
+        "lat": 39.04427638072339, 
+        "lng": -77.4725046994074,
         city: "Ashburn",
         zip: "20147",
         food: 'n',
