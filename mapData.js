@@ -4518,6 +4518,51 @@ let shops = [
         }
     },
     {
+        shopName:"Tiger Sugar",
+        lat: 38.838237630983556,  
+        lng: -77.424449161095,
+        city: "Centreville",
+        zip: "20121",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Monday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Tuesday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Wednesday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Thursday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Friday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Saturday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        }
+    },
+    {
         shopName:"Tsaocaa (Tsaocha)",
         lat: 39.03575436682891, 
         lng: -77.50054025889666,
@@ -4906,7 +4951,7 @@ function initMap() {
         var openDayOfMonth = today.getDate();
         var closeDayOfMonth = today.getDate();
         openDayOfMonth -= today < shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0;
-        closeDayOfMonth += today >= shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0")  ? 1 : 0; //for shops that close after midnight. move to the next day
+        closeDayOfMonth += today >= shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0; //for shops that close after midnight. move to the next day
         shopOpeningDate.setDate(openDayOfMonth);
         shopClosingDate.setDate(closeDayOfMonth);
         splitShopName = shops[i].shopName.split(" ");
