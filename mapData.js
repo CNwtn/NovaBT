@@ -1638,6 +1638,51 @@ let shops = [
         }
     },
     {
+        shopName:"Hong Kong Tea House",
+        lat: 38.83740335747695,
+        lng: -77.43385281321446,
+        city: "Centreville",
+        zip: "20121",
+        food: 'y',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Monday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        }
+    },
+    {
         shopName:"Infini-Tea",
         lat: 38.8690391094471,
         lng: -77.1733203427517,
@@ -4743,48 +4788,48 @@ let shops = [
         }
     },
     {
-        shopName:"Who Seek",
+        shopName:"Cafe Moment",
         lat: 38.8937018628453,
         lng: -77.4272437131896,
         city: "Chantilly",
         zip: "20151",
-        food: 'n',
+        food: 'y',
         dessert: 'y',
-        games: 'y',
+        games: 'n',
         Sunday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
         },
         Monday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
         },
         Tuesday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
         },
         Wednesday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
         },
         Thursday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
         },
         Friday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
         },
         Saturday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
         }
     },
     {
