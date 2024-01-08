@@ -378,6 +378,96 @@ let shops = [
         }
     },
     {
+        shopName:"Boba Knight",
+        lat: 38.86221024012838, 
+        lng: -77.2959162196095,
+        city: "Fairfax",
+        zip: "22030",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "12PM - 10:30PM",
+            open: "12:00",
+            close: "22:30"
+        },
+        Monday: {
+            hours: "12PM - 10:30PM",
+            open: "12:00",
+            close: "22:30"
+        },
+        Tuesday: {
+            hours: "12PM - 10:30PM",
+            open: "12:00",
+            close: "22:30"
+        },
+        Wednesday: {
+            hours: "12PM - 10:30PM",
+            open: "12:00",
+            close: "22:30"
+        },
+        Thursday: {
+            hours: "12PM - 10:30PM",
+            open: "12:00",
+            close: "22:30"
+        },
+        Friday: {
+            hours: "12PM - 10:30PM",
+            open: "12:00",
+            close: "22:30"
+        },
+        Saturday: {
+            hours: "12PM - 10:30PM",
+            open: "12:00",
+            close: "22:30"
+        }
+    },
+    {
+        shopName:"Boba TomTom",
+        lat: 38.84843408498978,
+        lng: -77.30087692899075,
+        city: "Fairfax",
+        zip: "22030",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "Closed for today",
+            open: "Closed for today",
+            close: "Closed for today"
+        },
+        Monday: {
+            hours: "10AM - 10PM",
+            open: "10:00",
+            close: "22:00"
+        },
+        Tuesday: {
+            hours: "10AM - 10PM",
+            open: "10:00",
+            close: "22:00"
+        },
+        Wednesday: {
+            hours: "10AM - 10PM",
+            open: "10:00",
+            close: "22:00"
+        },
+        Thursday: {
+            hours: "10AM - 10PM",
+            open: "10:00",
+            close: "22:00"
+        },
+        Friday: {
+            hours: "10AM - 10PM",
+            open: "10:00",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "10AM - 10PM",
+            open: "10:00",
+            close: "22:00"
+        }
+    },
+    {
         shopName:"Bobapop Tea Bar",
         lat: 38.8737540086376,
         lng: -77.225153162887,
@@ -690,6 +780,51 @@ let shops = [
             hours: "12PM - 9:30PM",
             open: "12:00",
             close: "21:30"
+        }
+    },
+    {
+        shopName:"Cafe Moment",
+        lat: 38.8937018628453,
+        lng: -77.4272437131896,
+        city: "Chantilly",
+        zip: "20151",
+        food: 'y',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
+        },
+        Monday: {
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
+        },
+        Tuesday: {
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
+        },
+        Wednesday: {
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
+        },
+        Thursday: {
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
+        },
+        Friday: {
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
+        },
+        Saturday: {
+            hours: "11AM - 8:30PM",
+            open: "11:00",
+            close: "20:30"
         }
     },
     {
@@ -3528,6 +3663,51 @@ let shops = [
         }
     },
     {
+        shopName:"Pekoe Tea Bar",
+        lat: 38.86378938225895,
+        lng: -77.2797608216317,
+        city: "Fairfax",
+        zip: "22031",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "10AM - 12AM",
+            open: "10:00",
+            close: "00:00"
+        },
+        Monday: {
+            hours: "10AM - 12AM",
+            open: "10:00",
+            close: "00:00"
+        },
+        Tuesday: {
+            hours: "10AM - 12AM",
+            open: "10:00",
+            close: "00:00"
+        },
+        Wednesday: {
+            hours: "10AM - 12AM",
+            open: "10:00",
+            close: "00:00"
+        },
+        Thursday: {
+            hours: "10AM - 12AM",
+            open: "10:00",
+            close: "00:00"
+        },
+        Friday: {
+            hours: "10AM - 12AM",
+            open: "10:00",
+            close: "00:00"
+        },
+        Saturday: {
+            hours: "10AM - 12AM",
+            open: "10:00",
+            close: "00:00"
+        }
+    },
+    {
         shopName:"RareTea",
         lat: 38.788007081397886,
         lng: -77.60639989997517,
@@ -4698,6 +4878,51 @@ let shops = [
         }
     },
     {
+        shopName:"Vessel Tea",
+        lat: 38.65083797328173, 
+        lng: -77.31420472264017,
+        city: "Woodbridge",
+        zip: "22193",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Monday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        }
+    },
+    {
         shopName:"Vivi Bubble Tea",
         lat: 38.8442480596345,
         lng: -77.2907886325075,
@@ -4785,51 +5010,6 @@ let shops = [
             hours: "10:30AM - 10PM",
             open: "10:30",
             close: "22:00"
-        }
-    },
-    {
-        shopName:"Cafe Moment",
-        lat: 38.8937018628453,
-        lng: -77.4272437131896,
-        city: "Chantilly",
-        zip: "20151",
-        food: 'y',
-        dessert: 'y',
-        games: 'n',
-        Sunday: {
-            hours: "11AM - 8:30PM",
-            open: "11:00",
-            close: "20:30"
-        },
-        Monday: {
-            hours: "11AM - 8:30PM",
-            open: "11:00",
-            close: "20:30"
-        },
-        Tuesday: {
-            hours: "11AM - 8:30PM",
-            open: "11:00",
-            close: "20:30"
-        },
-        Wednesday: {
-            hours: "11AM - 8:30PM",
-            open: "11:00",
-            close: "20:30"
-        },
-        Thursday: {
-            hours: "11AM - 8:30PM",
-            open: "11:00",
-            close: "20:30"
-        },
-        Friday: {
-            hours: "11AM - 8:30PM",
-            open: "11:00",
-            close: "20:30"
-        },
-        Saturday: {
-            hours: "11AM - 8:30PM",
-            open: "11:00",
-            close: "20:30"
         }
     },
     {
