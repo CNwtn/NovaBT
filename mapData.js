@@ -3078,51 +3078,6 @@ let shops = [
         }
     },
     {
-        shopName:"Love: Juice Drink Bites",
-        lat: 38.848678384554724, 
-        lng: -77.3036519627467,
-        city: "Fairfax",
-        zip: "22030",
-        food: 'y',
-        dessert: 'y',
-        games: 'n',
-        Sunday: {
-            hours: "10AM - 7PM",
-            open: "10:00",
-            close: "19:00"
-        },
-        Monday: {
-            hours: "10AM - 7PM",
-            open: "10:00",
-            close: "19:00"
-        },
-        Tuesday: {
-            hours: "Closed for today",
-            open: "Closed for today",
-            close: "Closed for today"
-        },
-        Wednesday: {
-            hours: "10AM - 7PM",
-            open: "10:00",
-            close: "19:00"
-        },
-        Thursday: {
-            hours: "10AM - 7PM",
-            open: "10:00",
-            close: "19:00"
-        },
-        Friday: {
-            hours: "10AM - 7PM",
-            open: "10:00",
-            close: "19:00"
-        },
-        Saturday: {
-            hours: "10AM - 7PM",
-            open: "10:00",
-            close: "19:00"
-        }
-    },
-    {
         shopName:"Lily Bubble Tea & Smoothie",
         lat: 38.8584303313441,
         lng: -77.0510584904051,
