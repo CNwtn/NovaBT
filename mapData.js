@@ -4442,34 +4442,34 @@ let shops = [
             close: "21:00"
         },
         Monday: {
-            hours: "9AM - 9PM",
+            hours: "9AM - 10PM",
             open: "09:00",
-            close: "21:00"
+            close: "22:00"
         },
         Tuesday: {
-            hours: "9AM - 9PM",
+            hours: "9AM - 10PM",
             open: "09:00",
-            close: "21:00"
+            close: "22:00"
         },
         Wednesday: {
-            hours: "9AM - 9PM",
+            hours: "9AM - 10PM",
             open: "09:00",
-            close: "21:00"
+            close: "22:00"
         },
         Thursday: {
-            hours: "9AM - 9PM",
+            hours: "9AM - 8PM",
             open: "09:00",
-            close: "21:00"
+            close: "20:00"
         },
         Friday: {
-            hours: "9AM - 10PM",
+            hours: "9AM - 12AM",
             open: "09:00",
-            close: "22:00"
+            close: "00:00"
         },
         Saturday: {
-            hours: "9AM - 10PM",
+            hours: "9AM - 12AM",
             open: "09:00",
-            close: "22:00"
+            close: "00:00"
         }
     },
     {
