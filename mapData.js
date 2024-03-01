@@ -2179,6 +2179,51 @@ let shops = [
     },
     {
         shopName:"Kokee Tea",
+        lat: 38.71378941477011, 
+        lng: -77.23392859358259,
+        city: "Lorton",
+        zip: "22079",
+        food: 'y',
+        dessert: 'y',
+        games: 'y',
+        Sunday: {
+            hours: "12:00AM - 8PM",
+            open: "12:00",
+            close: "20:00"
+        },
+        Monday: {
+            hours: "11:00AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "11:00AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "11:00AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "11:00AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "11:00AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "11:00AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        }
+    },
+    {
+        shopName:"Kokee Tea",
         lat: 38.7745055152852,
         lng: -77.1738556333021,
         city: "Springfield",
@@ -3213,7 +3258,7 @@ let shops = [
         }
     },
     {
-        shopName:"Möge Tee",
+        shopName:"Moge Tee",
         lat: 38.8699795427819,
         lng: -77.1454806527237,
         city: "Falls Church",
@@ -3258,7 +3303,7 @@ let shops = [
         }
     },
     {
-        shopName:"Möge Tee",
+        shopName:"Moge Tee",
         lat: 38.9171475665691,
         lng: -77.2229865838858,
         city: "McLean",
@@ -3300,6 +3345,51 @@ let shops = [
             hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
+        }
+    },
+    {
+        shopName:"Moge Tee",
+        lat: 38.77421162038746, 
+        lng: -77.17052442380313,
+        city: "Springfield",
+        zip: "22150",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Monday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Tuesday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Wednesday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Thursday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Friday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Saturday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
         }
     },
     {
