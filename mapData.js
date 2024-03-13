@@ -3259,51 +3259,6 @@ let shops = [
     },
     {
         shopName:"Moge Tee",
-        lat: 38.8699795427819,
-        lng: -77.1454806527237,
-        city: "Falls Church",
-        zip: "22044",
-        food: 'n',
-        dessert: 'y',
-        games: 'n',
-        Sunday: {
-            hours: "12PM - 8PM",
-            open: "12:00",
-            close: "20:00"
-        },
-        Monday: {
-            hours: "12PM - 8PM",
-            open: "12:00",
-            close: "20:00"
-        },
-        Tuesday: {
-            hours: "12PM - 8PM",
-            open: "12:00",
-            close: "20:00"
-        },
-        Wednesday: {
-            hours: "12PM - 8PM",
-            open: "12:00",
-            close: "20:00"
-        },
-        Thursday: {
-            hours: "12PM - 8PM",
-            open: "12:00",
-            close: "20:00"
-        },
-        Friday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Saturday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
-        }
-    },
-    {
-        shopName:"Moge Tee",
         lat: 38.9171475665691,
         lng: -77.2229865838858,
         city: "McLean",
