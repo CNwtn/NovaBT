@@ -272,7 +272,7 @@ let shops = [
             close: "22:00"
         },
         Saturday: {
-            hours: "12PM - 10:00PM",
+            hours: "12PM - 10PM",
             open: "12:00",
             close: "22:00"
         }
@@ -557,37 +557,37 @@ let shops = [
         dessert: 'n',
         games: 'n',
         Sunday: {
-            hours: "12PM - 6:00PM",
+            hours: "12PM - 6PM",
             open: "12:00",
             close: "18:00"
         },
         Monday: {
-            hours: "10AM - 8:00PM",
+            hours: "10AM - 8PM",
             open: "10:00",
             close: "20:00"
         },
         Tuesday: {
-            hours: "10AM - 8:00PM",
+            hours: "10AM - 8PM",
             open: "10:00",
             close: "20:00"
         },
         Wednesday: {
-            hours: "10AM - 8:00PM",
+            hours: "10AM - 8PM",
             open: "10:00",
             close: "20:00"
         },
         Thursday: {
-            hours: "10AM - 8:00PM",
+            hours: "10AM - 8PM",
             open: "10:00",
             close: "20:00"
         },
         Friday: {
-            hours: "10AM - 8:00PM",
+            hours: "10AM - 8PM",
             open: "10:00",
             close: "20:00"
         },
         Saturday: {
-            hours: "10AM - 8:00PM",
+            hours: "10AM - 8PM",
             open: "10:00",
             close: "20:00"
         }
@@ -1583,6 +1583,51 @@ let shops = [
         }
     },
     {
+        shopName:"iCream Yogurt & Crepes",
+        lat: 38.8725383897278, 
+        lng: -77.15312374108113,
+        city: "Falls Church",
+        zip: "22044",
+        food: 'y',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 12AM",
+            open: "11:00",
+            close: "00:00"
+        },
+        Monday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Tuesday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Wednesday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Thursday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Friday: {
+            hours: "11AM - 11:30PM",
+            open: "11:00",
+            close: "23:30"
+        },
+        Saturday: {
+            hours: "11AM - 12AM",
+            open: "11:00",
+            close: "00:00"
+        }
+    },
+    {
         shopName:"Infini-Tea",
         lat: 38.8690391094471,
         lng: -77.1733203427517,
@@ -1592,22 +1637,22 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
         Monday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
         Tuesday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
         Wednesday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
@@ -1617,12 +1662,12 @@ let shops = [
             close: "Closed for today"
         },
         Friday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
         Saturday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         }
@@ -1907,37 +1952,37 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "11:00AM - 7PM",
+            hours: "11AM - 7PM",
             open: "11:00",
             close: "19:00"
         },
         Monday: {
-            hours: "10:00AM - 9:30PM",
+            hours: "10AM - 9:30PM",
             open: "10:00",
             close: "21:30"
         },
         Tuesday: {
-            hours: "10:00AM - 9:30PM",
+            hours: "10AM - 9:30PM",
             open: "10:00",
             close: "21:30"
         },
         Wednesday: {
-            hours: "10:00AM - 8:30PM",
+            hours: "10AM - 8:30PM",
             open: "10:00",
             close: "20:30"
         },
         Thursday: {
-            hours: "10:00AM - 9:30PM",
+            hours: "10AM - 9:30PM",
             open: "10:00",
             close: "21:30"
         },
         Friday: {
-            hours: "10:00AM - 9:30PM",
+            hours: "10AM - 9:30PM",
             open: "10:00",
             close: "21:30"
         },
         Saturday: {
-            hours: "10:00AM - 9:30PM",
+            hours: "10AM - 9:30PM",
             open: "10:00",
             close: "21:30"
         }
@@ -1952,7 +1997,7 @@ let shops = [
         dessert: 'y',
         games: 'y',
         Sunday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
@@ -1962,27 +2007,27 @@ let shops = [
             close: "21:00"
         },
         Tuesday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         },
         Wednesday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         },
         Thursday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         },
         Friday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         },
         Saturday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         }
@@ -1997,37 +2042,37 @@ let shops = [
         dessert: 'y',
         games: 'y',
         Sunday: {
-            hours: "12:00AM - 8PM",
+            hours: "12AM - 8PM",
             open: "12:00",
             close: "20:00"
         },
         Monday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         },
         Tuesday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         },
         Wednesday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         },
         Thursday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         },
         Friday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         },
         Saturday: {
-            hours: "11:00AM - 9PM",
+            hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
         }
@@ -2042,37 +2087,37 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "11:00AM - 7PM",
+            hours: "11AM - 7PM",
             open: "11:00",
             close: "19:00"
         },
         Monday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
         Tuesday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
         Wednesday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
         Thursday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
         Friday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
         Saturday: {
-            hours: "11:00AM - 8PM",
+            hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         }
@@ -2132,37 +2177,82 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "11:00AM - 6PM",
+            hours: "11AM - 6PM",
             open: "11:00",
             close: "18:00"
         },
         Monday: {
-            hours: "10:00AM - 8PM",
+            hours: "10AM - 8PM",
             open: "10:00",
             close: "20:00"
         },
         Tuesday: {
-            hours: "10:00AM - 8PM",
+            hours: "10AM - 8PM",
             open: "10:00",
             close: "20:00"
         },
         Wednesday: {
-            hours: "10:00AM - 8PM",
+            hours: "10AM - 8PM",
             open: "10:00",
             close: "20:00"
         },
         Thursday: {
-            hours: "10:00AM - 8PM",
+            hours: "10AM - 8PM",
             open: "10:00",
             close: "20:00"
         },
         Friday: {
-            hours: "10:00AM - 9PM",
+            hours: "10AM - 9PM",
             open: "10:00",
             close: "21:00"
         },
         Saturday: {
-            hours: "10:00AM - 9PM",
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        }
+    },
+    {
+        shopName:"Komma Tea 2",
+        lat: 38.64363087178393, 
+        lng: -77.29276823157812,
+        city: "Woodbridge",
+        zip: "22192",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "10AM - 6PM",
+            open: "10:00",
+            close: "18:00"
+        },
+        Monday: {
+            hours: "10AM - 8PM",
+            open: "10:00",
+            close: "20:00"
+        },
+        Tuesday: {
+            hours: "10AM - 8PM",
+            open: "10:00",
+            close: "20:00"
+        },
+        Wednesday: {
+            hours: "10AM - 8PM",
+            open: "10:00",
+            close: "20:00"
+        },
+        Thursday: {
+            hours: "10AM - 8PM",
+            open: "10:00",
+            close: "20:00"
+        },
+        Friday: {
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "10AM - 9PM",
             open: "10:00",
             close: "21:00"
         }
@@ -2432,7 +2522,7 @@ let shops = [
             close: "22:00"
         },
         Saturday: {
-            hours: "11:00AM - 10PM",
+            hours: "11AM - 10PM",
             open: "11:00",
             close: "22:00"
         }
@@ -3920,6 +4010,51 @@ let shops = [
             hours: "10AM - 10PM",
             open: "10:00",
             close: "22:00"
+        }
+    },
+    {
+        shopName:"Tapioca Express",
+        lat: 38.9698785493713,  
+        lng: -77.38425975887202,
+        city: "Herndon",
+        zip: "20170",
+        food: 'y',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "12PM - 8PM",
+            open: "12:00",
+            close: "20:00"
+        },
+        Monday: {
+            hours: "Closed for Today",
+            open: "Closed for Today",
+            close: "Closed for Today"
+        },
+        Tuesday: {
+            hours: "12PM - 8PM",
+            open: "12:00",
+            close: "20:00"
+        },
+        Wednesday: {
+            hours: "12PM - 8PM",
+            open: "12:00",
+            close: "20:00"
+        },
+        Thursday: {
+            hours: "12PM - 8PM",
+            open: "12:00",
+            close: "20:00"
+        },
+        Friday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "12PM - 9PM",
+            open: "12:00",
+            close: "21:00"
         }
     },
     {
