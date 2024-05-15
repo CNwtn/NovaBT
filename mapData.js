@@ -4553,6 +4553,51 @@ let shops = [
         }
     },
     {
+        shopName:"the TEA",
+        lat: 38.874170443744,
+        lng: -77.1551068734337,
+        city: "Falls Church",
+        zip: "22044",
+        food: 'y',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Monday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Tuesday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Wednesday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Thursday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Friday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        }
+    },
+    {
         shopName:"Tiger Sugar",
         lat: 38.838237630983556,  
         lng: -77.424449161095,
@@ -4599,8 +4644,8 @@ let shops = [
     },
     {
         shopName:"Tiger Sugar",
-        lat: 38.82998802751463, 
-        lng: -77.18934866388503,
+        lat: 38.83016746812058, 
+        lng: -77.18811741684245,
         city: "Annandale",
         zip: "22003",
         food: 'y',
@@ -4734,16 +4779,16 @@ let shops = [
     },
     {
         shopName:"Vivi Bubble Tea",
-        lat: 38.874170443744,
-        lng: -77.1551068734337,
-        city: "Falls Church",
-        zip: "22044",
+        lat: 38.90426132182087, 
+        lng: -77.26084581166585,
+        city: "Vienna",
+        zip: "22180",
         food: 'y',
         dessert: 'n',
-        games: 'n',
+        games: 'y',
         Sunday: {
-            hours: "10:30AM - 10PM",
-            open: "10:30",
+            hours: "11AM - 10PM",
+            open: "11:00",
             close: "22:00"
         },
         Monday: {
@@ -4767,13 +4812,13 @@ let shops = [
             close: "22:00"
         },
         Friday: {
-            hours: "11AM - 10PM",
-            open: "11:00",
-            close: "22:00"
+            hours: "10AM - 11PM",
+            open: "10:00",
+            close: "23:00"
         },
         Saturday: {
-            hours: "10:30AM - 10PM",
-            open: "10:30",
+            hours: "11AM - 10PM",
+            open: "11:00",
             close: "22:00"
         }
     },
