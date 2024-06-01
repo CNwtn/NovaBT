@@ -1989,6 +1989,51 @@ let shops = [
     },
     {
         shopName:"Kokee Tea",
+        lat: 38.867961820698476, 
+        lng: -77.44684733937515,
+        city: "Centreville",
+        zip: "20120",
+        food: 'n',
+        dessert: 'y',
+        games: 'y',
+        Sunday: {
+            hours: "11AM - 7PM",
+            open: "11:00",
+            close: "19:00"
+        },
+        Monday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        }
+    },
+    {
+        shopName:"Kokee Tea",
         lat: 38.8423360237354,
         lng: -77.2759605506546,
         city: "Fairfax",
