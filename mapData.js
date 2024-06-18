@@ -98,6 +98,51 @@ let shops = [
         }
     },
     {
+        shopName:"ArTea TeaShop & TeaLab",
+        lat: 38.93092351750966, 
+        lng: -77.17351848455093,
+        city: "McLean",
+        zip: "22101",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 4PM",
+            open: "11:00",
+            close: "16:00"
+        },
+        Monday: {
+            hours: "Closed for Today",
+            open: "Closed for Today",
+            close: "Closed for Today"
+        },
+        Tuesday: {
+            hours: "11AM - 7PM",
+            open: "11:00",
+            close: "19:00"
+        },
+        Wednesday: {
+            hours: "11AM - 7PM",
+            open: "11:00",
+            close: "19:00"
+        },
+        Thursday: {
+            hours: "11AM - 7PM",
+            open: "11:00",
+            close: "19:00"
+        },
+        Friday: {
+            hours: "11AM - 7PM",
+            open: "11:00",
+            close: "19:00"
+        },
+        Saturday: {
+            hours: "11AM - 7PM",
+            open: "11:00",
+            close: "19:00"
+        }
+    },
+    {
         shopName:"Bambu Coffe Tea Che",
         lat: 38.83194831559987, 
         lng: -77.19701571539082,
