@@ -4599,6 +4599,51 @@ let shops = [
         }
     },
     {
+        shopName:"Vessel Tea",
+        lat: 38.82433804684889, 
+        lng: -77.17218246522901,
+        city: "Annandale",
+        zip: "22003",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Monday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        }
+    },
+    {
         shopName:"Vivi Bubble Tea",
         lat: 38.8442480596345,
         lng: -77.2907886325075,
