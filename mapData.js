@@ -1,11 +1,12 @@
-var map;
+let map;
 let mapDetails = {
     center:{lat: 38.84575643258774,lng: -77.30619430989303},
-    zoom:10};
-var markerArray = [];
-var today = new Date();
-var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-var currentWeekday = today.getDay();
+    zoom:10, 
+    mapId: '65b3b8fe5572941b'};
+let markerArray = [];
+let today = new Date();
+let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let currentWeekday = today.getDay();
 let shops = [
     {
         shopName:"5T Ice",
@@ -2482,7 +2483,6 @@ let shops = [
             close: "22:00"
         }
     },
-    ,
     {
         shopName:"Kung Fu Tea",
         lat: 38.86332414503404, 
@@ -2976,6 +2976,96 @@ let shops = [
             hours: "11AM - 9PM",
             open: "11:00",
             close: "21:00"
+        }
+    },
+    {
+        shopName:"Kyo Matcha",
+        lat: 38.82333104130392, 
+        lng: -77.16110480400079, 
+        city: "Alexandria",
+        zip: "22312",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Monday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Tuesday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Wednesday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Thursday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Friday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        }
+    },
+    {
+        shopName:"Kyo Matcha",
+        lat: 38.89024881265632, 
+        lng: -77.18309151258428, 
+        city: "Falls Church",
+        zip: "22046",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Monday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Tuesday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Wednesday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Thursday: {
+            hours: "11:30AM - 10PM",
+            open: "11:30",
+            close: "22:00"
+        },
+        Friday: {
+            hours: "11:30AM - 10:30PM",
+            open: "11:30",
+            close: "22:30"
+        },
+        Saturday: {
+            hours: "11:30AM - 10:30PM",
+            open: "11:30",
+            close: "22:30"
         }
     },
     {
@@ -4374,6 +4464,51 @@ let shops = [
         }
     },
     {
+        shopName:"The Alley",
+        lat: 38.852126991358375, 
+        lng: -77.32563999033104,
+        city: "Fairfax",
+        zip: "22030",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "12PM - 11:30PM",
+            open: "12:00",
+            close: "23:30"
+        },
+        Monday: {
+            hours: "12PM - 11:30PM",
+            open: "12:00",
+            close: "23:30"
+        },
+        Tuesday: {
+            hours: "12PM - 11:30PM",
+            open: "12:00",
+            close: "23:30"
+        },
+        Wednesday: {
+            hours: "12PM - 11:30PM",
+            open: "12:00",
+            close: "23:30"
+        },
+        Thursday: {
+            hours: "12PM - 11:30PM",
+            open: "12:00",
+            close: "23:30"
+        },
+        Friday: {
+            hours: "12PM - 1AM",
+            open: "12:00",
+            close: "01:00"
+        },
+        Saturday: {
+            hours: "12PM - 1AM",
+            open: "12:00",
+            close: "01:00"
+        }
+    },
+    {
         shopName:"the TEA",
         lat: 38.874170443744,
         lng: -77.1551068734337,
@@ -4824,13 +4959,13 @@ let shops = [
         }
     },
 ];
-var userSearch = document.getElementById("searchQuery");
-var shopInfo;
-var infoObj = [];
-var filters = document.getElementsByTagName("input");
-var filterUsed = false;
-var filterMatch = false;
-var duplicateFound = false;
+let userSearch = document.getElementById("searchQuery");
+let shopInfo;
+let infoObj = [];
+let filters = document.getElementsByTagName("input");
+let filterUsed = false;
+let filterMatch = false;
+let duplicateFound = false;
 
 userSearch.addEventListener("keypress", function (e){ //check if user used enter key instead of clicking the button
     if(e.key === 'Enter'){
@@ -4840,17 +4975,17 @@ userSearch.addEventListener("keypress", function (e){ //check if user used enter
 });
 
 function initMap() { 
-    var directionsURL = "https://www.google.com/maps/search/?api=1&query=";
-    var splitShopName = [];
-    var shopOpenInfo;
-    var shopClosedInfo;
+    let directionsURL = "https://www.google.com/maps/search/?api=1&query=";
+    let splitShopName = [];
+    let shopOpenInfo;
+    let shopClosedInfo;
     map = new google.maps.Map(document.getElementById("map"), mapDetails);
 
     for(let i = 0; i < shops.length; i++){ //add markers for all 
-        var shopOpeningDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].open.substring(0, 2), shops[i][weekdays[currentWeekday]].open.substring(3));
-        var shopClosingDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
-        var openDayOfMonth = today.getDate();
-        var closeDayOfMonth = today.getDate();
+        let shopOpeningDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].open.substring(0, 2), shops[i][weekdays[currentWeekday]].open.substring(3));
+        let shopClosingDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
+        let openDayOfMonth = today.getDate();
+        let closeDayOfMonth = today.getDate();
         openDayOfMonth -= today < shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0;
         closeDayOfMonth += today >= shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0; //for shops that close after midnight. move to the next day
         shopOpeningDate.setDate(openDayOfMonth);
@@ -4879,7 +5014,7 @@ function initMap() {
 
         shopInfo += shops[i].city + "+VA'><i>get directions</i></a>";
 
-        const marker = new google.maps.Marker({
+        const marker = new google.maps.marker.AdvancedMarkerElement({
             position: {lat: shops[i].lat, lng: shops[i].lng},
             map
         });
@@ -4897,8 +5032,8 @@ function initMap() {
             });
             infoObj[0] = infoWindow;
 
-            map.setZoom(15);
-            map.setCenter(marker.getPosition());
+            map.setZoom(14);
+            map.setCenter(marker.position);
         });
     } //end for
   
@@ -4915,17 +5050,17 @@ function closeInfoWindow(){
 function searchResults(){
     closeInfoWindow();
 
-    var query = document.getElementById("searchQuery").value;
+    let query = document.getElementById("searchQuery").value;
     query = query.trim().toUpperCase(); 
-    var filterChecked = false;
-    var tempShopsArr = []; //used for filtered results
-    var tempMarkerArr = []; //used for filtered results
-    var resultCount = 0;
+    let filterChecked = false;
+    let tempShopsArr = []; //used for filtered results
+    let tempMarkerArr = []; //used for filtered results
+    let resultCount = 0;
 
-    map.setZoom(9);
+    map.setZoom(10);
 
     for(let i = 0; i < shops.length; i++){ //reset markers for new search so they appear
-        markerArray[i].setVisible(true);
+        markerArray[i].map = map;
     }
 
     //check to see if any filter has been used
@@ -4939,10 +5074,10 @@ function searchResults(){
     if(filterUsed == true){ //check for filter matches with shops
         
         for(let i = 0; i < shops.length; i++){ //check each shop 
-            var shopOpeningDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].open.substring(0, 2), shops[i][weekdays[currentWeekday]].open.substring(3));
-            var shopClosingDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
-            var openDayOfMonth = today.getDate();
-            var closeDayOfMonth = today.getDate();
+            let shopOpeningDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].open.substring(0, 2), shops[i][weekdays[currentWeekday]].open.substring(3));
+            let shopClosingDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
+            let openDayOfMonth = today.getDate();
+            let closeDayOfMonth = today.getDate();
             openDayOfMonth -= today < shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0;
             closeDayOfMonth += today >= shopClosingDate && shops[i][weekdays[currentWeekday]].close.startsWith("0")  ? 1 : 0; //for shops that close after midnight. move to the next day
             shopOpeningDate.setDate(openDayOfMonth);
@@ -4974,7 +5109,7 @@ function searchResults(){
                 tempMarkerArr.push(markerArray[i]); //add filtered markers to temporary array so that original array isn't altered
             }
             else {
-                markerArray[i].setVisible(false);
+                markerArray[i].map = null;
             }
 
             filterMatch = false; //reset for next iteration
@@ -4988,10 +5123,10 @@ function searchResults(){
         
         for(let i = 0; i < tempShopsArr.length; i++){ //check for matches
           if(!(tempShopsArr[i].shopName.toUpperCase().includes(query)|| tempShopsArr[i].city.toUpperCase().includes(query) || query == tempShopsArr[i].zip)){ //if they don't match, hide the pin
-                tempMarkerArr[i].setVisible(false);
+                tempMarkerArr[i].map = null;
             }
             else { //if there is a match
-                map.panTo(tempMarkerArr[i].getPosition()); //pan to area where results are
+                map.panTo(tempMarkerArr[i].position); //pan to area where results are
                 resultCount++; 
             }
         } //end for    
@@ -5002,15 +5137,15 @@ function searchResults(){
         
         for(let i = 0; i < shops.length; i++){ //check for matches
             if(!query.trim() && query != null){ //if there is an empty or null search, show all pins
-                markerArray[i].setVisible(true);
+                markerArray[i].map = map;
                 resultCount = shops.length;
                 break;
             }
             else if(!(shops[i].shopName.toUpperCase().includes(query) || shops[i].city.toUpperCase().includes(query) || query == shops[i].zip)){ //if they don't match, hide the pin
-                markerArray[i].setVisible(false);
+                markerArray[i].map = null
             }
             else { //if there is a match
-                map.panTo(markerArray[i].getPosition()); //pan to area where results are
+                map.panTo(markerArray[i].position); //pan to area where results are
                 resultCount++;
             }
         } //end for    
@@ -5025,15 +5160,15 @@ function surpriseShop(){
     document.getElementById("results").innerHTML = "";
 
     for(let i = 0; i < shops.length; i++){ //reset markers and hide them
-        markerArray[i].setVisible(false);
+        markerArray[i].map = null;
     }
     
-    var query = document.getElementById("searchQuery").value;
+    let query = document.getElementById("searchQuery").value;
     query = query.trim().toUpperCase();
-    var randomShop;
-    var tempSurpriseShops = []; //hold list of shops to choose from if there is a zip code/city/filter specified 
-    var tempSurpriseMarkerArr = [];
-    var mismatchShops = []; //shops that don't meet reqs
+    let randomShop;
+    let tempSurpriseShops = []; //hold list of shops to choose from if there is a zip code/city/filter specified 
+    let tempSurpriseMarkerArr = [];
+    let mismatchShops = []; //shops that don't meet reqs
     
     //check to see if any filter has been used
     for(let i = 1; i < filters.length; i++){ 
@@ -5051,10 +5186,10 @@ function surpriseShop(){
 
     if(filterUsed == true){ 
         for(let i = 0; i < shops.length; i++){ //check each shop
-            var shopOpeningDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].open.substring(0, 2), shops[i][weekdays[currentWeekday]].open.substring(3));
-            var closeDayOfMonth = today.getDate();
+            let shopOpeningDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), shops[i][weekdays[currentWeekday]].open.substring(0, 2), shops[i][weekdays[currentWeekday]].open.substring(3));
+            let closeDayOfMonth = today.getDate();
             closeDayOfMonth += shops[i][weekdays[currentWeekday]].close.startsWith("0") ? 1 : 0; //if it closes between 12AM and 9AM
-            var shopClosingDate = new Date(today.getFullYear(), today.getMonth(), closeDayOfMonth, shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
+            let shopClosingDate = new Date(today.getFullYear(), today.getMonth(), closeDayOfMonth, shops[i][weekdays[currentWeekday]].close.substring(0, 2), shops[i][weekdays[currentWeekday]].close.substring(3));
             
             for(let j = 0; j < filters.length; j++){ 
 
@@ -5128,11 +5263,11 @@ function surpriseShop(){
             
             for(let i = 0; i < tempSurpriseShops.length; i++){ 
                 if(tempSurpriseShops[i] != tempSurpriseShops[randomShop]){ //look for the shop that does match the shop with the random index
-                    tempSurpriseMarkerArr[i].setVisible(false);
+                    tempSurpriseMarkerArr[i].map = null;
                 }
                 else {
-                    tempSurpriseMarkerArr[i].setVisible(true);
-                    map.panTo(tempSurpriseMarkerArr[i].getPosition());
+                    tempSurpriseMarkerArr[i].map = map;
+                    map.panTo(tempSurpriseMarkerArr[i].position);
                     map.setZoom(14);
                     break;
                 }
@@ -5149,12 +5284,12 @@ function surpriseShop(){
         
         for(let i = 0; i < shops.length; i++){
             if(!(shops[i] == shops[randomShop])){ 
-                markerArray[i].setVisible(false);
+                markerArray[i].map = null;
             }
             else {
-                markerArray[i].setVisible(true);
-                map.panTo(markerArray[i].getPosition());
-                map.setZoom(14);
+                markerArray[i].map = map;
+                map.panTo(markerArray[i].position);
+                map.setZoom(10);
                 break;
             }
         }
