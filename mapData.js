@@ -98,7 +98,7 @@ let shops = [
             close: "19:00"
         }
     },
-    // {  temporarily closed**
+    // {  temporarily closed
     //     shopName:"Bambu Coffe Tea Che",
     //     lat: 38.83194831559987, 
     //     lng: -77.19701571539082,
@@ -323,58 +323,58 @@ let shops = [
             close: "21:30"
         }
     },
-    {
-        shopName:"Boba Knight",
-        lat: 38.86221024012838, 
-        lng: -77.2959162196095,
-        city: "Fairfax",
-        zip: "22030",
-        food: 'n',
-        dessert: 'n',
-        games: 'n',
-        Sunday: {
-            hours: "12PM - 10PM",
-            open: "12:00",
-            close: "22:00"
-        },
-        Monday: {
-            hours: "12PM - 10PM",
-            open: "12:00",
-            close: "22:00"
-        },
-        Tuesday: {
-            hours: "Closed for today",
-            open: "Closed for today",
-            close: "Closed for today"
-        },
-        Wednesday: {
-            hours: "12PM - 10PM",
-            open: "12:00",
-            close: "22:00"
-        },
-        Thursday: {
-            hours: "12PM - 10PM",
-            open: "12:00",
-            close: "22:00"
-        },
-        Friday: {
-            hours: "12PM - 10:30PM",
-            open: "12:00",
-            close: "22:30"
-        },
-        Saturday: {
-            hours: "12PM - 10:30PM",
-            open: "12:00",
-            close: "22:30"
-        }
-    },
+    // { temporarily closed
+    //     shopName:"Boba Knight & Pho",
+    //     lat: 38.86221024012838, 
+    //     lng: -77.2959162196095,
+    //     city: "Fairfax",
+    //     zip: "22030",
+    //     food: 'y',
+    //     dessert: 'n',
+    //     games: 'n',
+    //     Sunday: {
+    //         hours: "12PM - 10PM",
+    //         open: "12:00",
+    //         close: "22:00"
+    //     },
+    //     Monday: {
+    //         hours: "12PM - 10PM",
+    //         open: "12:00",
+    //         close: "22:00"
+    //     },
+    //     Tuesday: {
+    //         hours: "Closed for today",
+    //         open: "Closed for today",
+    //         close: "Closed for today"
+    //     },
+    //     Wednesday: {
+    //         hours: "12PM - 10PM",
+    //         open: "12:00",
+    //         close: "22:00"
+    //     },
+    //     Thursday: {
+    //         hours: "12PM - 10PM",
+    //         open: "12:00",
+    //         close: "22:00"
+    //     },
+    //     Friday: {
+    //         hours: "12PM - 10:30PM",
+    //         open: "12:00",
+    //         close: "22:30"
+    //     },
+    //     Saturday: {
+    //         hours: "12PM - 10:30PM",
+    //         open: "12:00",
+    //         close: "22:30"
+    //     }
+    // },
     {
         shopName:"Boba TomTom",
         lat: 38.84843408498978,
         lng: -77.30087692899075,
         city: "Fairfax",
         zip: "22030",
-        food: 'n',
+        food: 'y',
         dessert: 'n',
         games: 'n',
         Sunday: {
@@ -1043,51 +1043,51 @@ let shops = [
             close: "22:45"
         }
     },
-    {
-        shopName:"Gong Cha",
-        lat: 38.8315102389412,
-        lng: -77.1970042806781,
-        city: "Annandale",
-        zip: "22003",
-        food: 'n',
-        dessert: 'y',
-        games: 'y',
-        Sunday: {
-            hours: "10AM - 9PM",
-            open: "10:00",
-            close: "21:00"
-        },
-        Monday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
-            close: "21:00"
-        },
-        Tuesday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
-            close: "21:00"
-        },
-        Wednesday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
-            close: "21:00"
-        },
-        Thursday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
-            close: "21:00"
-        },
-        Friday: {
-            hours: "11AM - 10PM",
-            open: "11:00",
-            close: "22:00"
-        },
-        Saturday: {
-            hours: "10AM - 10PM",
-            open: "10:00",
-            close: "22:00"
-        }
-    },
+    // { temporarily closed
+    //     shopName:"Gong Cha",
+    //     lat: 38.8315102389412,
+    //     lng: -77.1970042806781,
+    //     city: "Annandale",
+    //     zip: "22003",
+    //     food: 'n',
+    //     dessert: 'y',
+    //     games: 'y',
+    //     Sunday: {
+    //         hours: "10AM - 9PM",
+    //         open: "10:00",
+    //         close: "21:00"
+    //     },
+    //     Monday: {
+    //         hours: "11AM - 9PM",
+    //         open: "11:00",
+    //         close: "21:00"
+    //     },
+    //     Tuesday: {
+    //         hours: "11AM - 9PM",
+    //         open: "11:00",
+    //         close: "21:00"
+    //     },
+    //     Wednesday: {
+    //         hours: "11AM - 9PM",
+    //         open: "11:00",
+    //         close: "21:00"
+    //     },
+    //     Thursday: {
+    //         hours: "11AM - 9PM",
+    //         open: "11:00",
+    //         close: "21:00"
+    //     },
+    //     Friday: {
+    //         hours: "11AM - 10PM",
+    //         open: "11:00",
+    //         close: "22:00"
+    //     },
+    //     Saturday: {
+    //         hours: "10AM - 10PM",
+    //         open: "10:00",
+    //         close: "22:00"
+    //     }
+    // },
     {
         shopName:"Gong Cha",
         lat: 38.8947072279681,
@@ -1276,6 +1276,51 @@ let shops = [
         zip: "22102",
         food: 'n',
         dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 7PM",
+            open: "11:00",
+            close: "19:00"
+        },
+        Monday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        }
+    },
+    {
+        shopName:"HEYTEA",
+        lat: 38.91770338688931, 
+        lng: -77.22103519999402,
+        city: "Tysons",
+        zip: "22102",
+        food: 'n',
+        dessert: 'n',
         games: 'n',
         Sunday: {
             hours: "11AM - 7PM",
@@ -2259,51 +2304,6 @@ let shops = [
         }
     },
     {
-        shopName: "Kung Fu Tea",
-        lat: 39.00732558877695, 
-        lng: -77.48677804829565,
-        city: "Ashburn",
-        zip: "20147",
-        food: 'n',
-        dessert: 'n',
-        games: 'n',
-        Sunday: {
-            hours: "10AM - 10PM",
-            open: "10:00",
-            close: "22:00"
-        },
-        Monday: {
-            hours: "11AM - 10PM",
-            open: "11:00",
-            close: "22:00"
-        },
-        Tuesday: {
-            hours: "11AM - 10PM",
-            open: "11:00",
-            close: "22:00"
-        },
-        Wednesday: {
-            hours: "11AM - 10PM",
-            open: "11:00",
-            close: "22:00"
-        },
-        Thursday: {
-            hours: "11AM - 10PM",
-            open: "11:00",
-            close: "22:00"
-        },
-        Friday: {
-            hours: "11AM - 12AM",
-            open: "11:00",
-            close: "00:00"
-        },
-        Saturday: {
-            hours: "10AM - 12AM",
-            open: "10:00",
-            close: "00:00"
-        }
-    },
-    {
         shopName:"Kung Fu Tea",
         lat: 38.7853614256071,
         lng: -77.5166666659609,
@@ -3066,51 +3066,6 @@ let shops = [
             hours: "11:30AM - 10:30PM",
             open: "11:30",
             close: "22:30"
-        }
-    },
-    {
-        shopName:"Lily Bubble Tea & Smoothie",
-        lat: 38.8584303313441,
-        lng: -77.0510584904051,
-        city: "Arlington",
-        zip: "22202",
-        food: 'n',
-        dessert: 'n',
-        games: 'n',
-        Sunday: {
-            hours: "Closed for today",
-            open: "Closed for today",
-            close: "Closed for today"
-        },
-        Monday: {
-            hours: "11:30AM - 6:30PM",
-            open: "11:30",
-            close: "18:30"
-        },
-        Tuesday: {
-            hours: "11:30AM - 6:30PM",
-            open: "11:30",
-            close: "18:30"
-        },
-        Wednesday: {
-            hours: "11:30AM - 6:30PM",
-            open: "11:30",
-            close: "18:30"
-        },
-        Thursday: {
-            hours: "11:30AM - 6:30PM",
-            open: "11:30",
-            close: "18:30"
-        },
-        Friday: {
-            hours: "11:30AM - 6:30PM",
-            open: "11:30",
-            close: "18:30"
-        },
-        Saturday: {
-            hours: "12PM - 7PM",
-            open: "12:00",
-            close: "19:30"
         }
     },
     { 
@@ -3924,51 +3879,6 @@ let shops = [
         }
     },
     {
-        shopName:"Tapioca Express",
-        lat: 38.9698785493713,  
-        lng: -77.38425975887202,
-        city: "Herndon",
-        zip: "20170",
-        food: 'y',
-        dessert: 'y',
-        games: 'n',
-        Sunday: {
-            hours: "2PM - 8PM",
-            open: "14:00",
-            close: "20:00"
-        },
-        Monday: {
-            hours: "Closed for Today",
-            open: "Closed for Today",
-            close: "Closed for Today"
-        },
-        Tuesday: {
-            hours: "Closed for Today",
-            open: "Closed for Today",
-            close: "Closed for Today"
-        },
-        Wednesday: {
-            hours: "2PM - 8PM",
-            open: "14:00",
-            close: "20:00"
-        },
-        Thursday: {
-            hours: "2PM - 8PM",
-            open: "14:00",
-            close: "20:00"
-        },
-        Friday: {
-            hours: "2PM - 8PM",
-            open: "14:00",
-            close: "20:00"
-        },
-        Saturday: {
-            hours: "2PM - 8PM",
-            open: "14:00",
-            close: "20:00"
-        }
-    },
-    {
         shopName:"TE'AMO Boba Bar",
         lat: 38.872823118085535, 
         lng: -77.22830078538483,
@@ -4741,7 +4651,7 @@ let shops = [
         zip: "22003",
         food: 'n',
         dessert: 'y',
-        games: 'n',
+        games: 'y',
         Sunday: {
             hours: "11AM - 9PM",
             open: "11:00",
