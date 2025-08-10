@@ -9,6 +9,51 @@ let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Sat
 let currentWeekday = today.getDay();
 let shops = [
     {
+        shopName:"4 Sisters Asian Snack Bar",
+        lat: 39.00997062697114, 
+        lng: -77.49176499849285,
+        city: "Ashburn",
+        zip: "20147",
+        food: 'y',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11:30AM - 6PM",
+            open: "11:30",
+            close: "18:00"
+        },
+        Monday: {
+            hours: "11:30AM - 7PM",
+            open: "11:30",
+            close: "19:00"
+        },
+        Tuesday: {
+            hours: "Closed for Today",
+            open: "Closed for Today",
+            close: "Closed for Today"
+        },
+        Wednesday: {
+            hours: "11:30AM - 7PM",
+            open: "11:30",
+            close: "19:00"
+        },
+        Thursday: {
+            hours: "11:30AM - 7PM",
+            open: "11:30",
+            close: "19:00"
+        },
+        Friday: {
+            hours: "11:30AM - 7PM",
+            open: "11:30",
+            close: "19:00"
+        },
+        Saturday: {
+            hours: "11:30AM - 7PM",
+            open: "11:30",
+            close: "19:00"
+        }
+    },
+    {
         shopName:"5T Ice",
         lat: 38.9375001600823,
         lng: -77.5222773905383,
@@ -18,43 +63,43 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:00"
         },
         Monday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:00"
         },
         Tuesday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:00"
         },
         Wednesday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:00"
         },
         Thursday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:00"
         },
         Friday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9:30PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:30"
         },
         Saturday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:00"
         }
     },
     {
-        shopName:"ArTea TeaShop & TeaLab",
+        shopName:"ArTea Shop",
         lat: 38.93092351750966, 
         lng: -77.17351848455093,
         city: "McLean",
@@ -63,9 +108,9 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "Closed for Today",
-            open: "Closed for Today",
-            close: "Closed for Today"
+            hours: "10AM - 4PM",
+            open: "10:00",
+            close: "16:00"
         },
         Monday: {
             hours: "Closed for Today",
@@ -83,9 +128,9 @@ let shops = [
             close: "19:00"
         },
         Thursday: {
-            hours: "11AM - 7PM",
+            hours: "11AM - 4:30PM",
             open: "11:00",
-            close: "19:00"
+            close: "16:30"
         },
         Friday: {
             hours: "11AM - 7PM",
@@ -93,9 +138,54 @@ let shops = [
             close: "19:00"
         },
         Saturday: {
-            hours: "11AM - 7PM",
-            open: "11:00",
+            hours: "10AM - 7PM",
+            open: "10:00",
             close: "19:00"
+        }
+    },
+     {
+        shopName:"AYE Tea Lounge",
+        lat: 38.853947526221106, 
+        lng: -77.32921131738038, 
+        city: "Fairfax",
+        zip: "22030",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Monday: {
+            hours: "11AM - 12AM",
+            open: "11:00",
+            close: "00:00"
+        },
+        Tuesday: {
+            hours: "11AM - 12AM",
+            open: "11:00",
+            close: "00:00"
+        },
+        Wednesday: {
+            hours: "11AM - 12AM",
+            open: "11:00",
+            close: "00:00"
+        },
+        Thursday: {
+            hours: "11AM - 12AM",
+            open: "11:00",
+            close: "00:00"
+        },
+        Friday: {
+            hours: "11AM - 12AM",
+            open: "11:00",
+            close: "00:00"
+        },
+        Saturday: {
+            hours: "11AM - 12AM",
+            open: "11:00",
+            close: "00:00"
         }
     },
     // {  temporarily closed
@@ -144,7 +234,7 @@ let shops = [
     //     }
     // }, 
     {
-        shopName:"Bees and Tea by Saigon Saigon",
+        shopName:"Bees and Tea",
         lat: 38.8631918707671,
         lng: -77.0629887873384,
         city: "Arlington",
@@ -153,38 +243,38 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "12PM - 10PM",
-            open: "12:00",
+            hours: "11:00AM - 10PM",
+            open: "11:00",
             close: "22:00"
         },
         Monday: {
-            hours: "11:30AM - 10PM",
-            open: "11:30",
+            hours: "11:00AM - 10PM",
+            open: "11:00",
             close: "22:00"
         },
         Tuesday: {
-            hours: "11:30AM - 10PM",
-            open: "11:30",
+            hours: "11:00AM - 10PM",
+            open: "11:00",
             close: "22:00"
         },
         Wednesday: {
-            hours: "11:30AM - 10PM",
-            open: "11:30",
+            hours: "11:00AM - 10PM",
+            open: "11:00",
             close: "22:00"
         },
         Thursday: {
-            hours: "11:30AM - 10PM",
-            open: "11:30",
+            hours: "11:00AM - 10PM",
+            open: "11:00",
             close: "22:00"
         },
         Friday: {
-            hours: "11:30AM - 11PM",
-            open: "11:30",
+            hours: "11AM - 11PM",
+            open: "11:00",
             close: "23:00"
         },
         Saturday: {
-            hours: "11:30AM - 11PM",
-            open: "11:30",
+            hours: "11AM - 11PM",
+            open: "11:00",
             close: "23:00"
         }
     },
@@ -218,8 +308,8 @@ let shops = [
             close: "21:00"
         },
         Thursday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
+            hours: "2PM - 9PM",
+            open: "14:00",
             close: "21:00"
         },
         Friday: {
@@ -243,8 +333,233 @@ let shops = [
         dessert: 'n',
         games: 'y',
         Sunday: {
-            hours: "12PM - 9PM",
+            hours: "12PM - 9:30PM",
             open: "12:00",
+            close: "21:30"
+        },
+        Monday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Tuesday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Wednesday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Thursday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Friday: {
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
+        }
+    },
+    {
+        shopName:"Ben Gong's Tea",
+        lat: 38.856461861476774, 
+        lng: -77.31560336595811,
+        city: "Fairfax",
+        zip: "22030",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Monday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Tuesday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Wednesday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Thursday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Friday: {
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
+        }
+    },
+    {
+        shopName:"Bloom Tea",
+        lat: 38.8009794935077, 
+        lng: -77.04802616136675,
+        city: "Alexandria",
+        zip: "22314",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "12PM - 6PM",
+            open: "12:00",
+            close: "18:00"
+        },
+        Monday: {
+            hours: "11AM - 8PM",
+            open: "11:00",
+            close: "20:00"
+        },
+        Tuesday: {
+            hours: "11AM - 8PM",
+            open: "11:00",
+            close: "20:00"
+        },
+        Wednesday: {
+            hours: "11AM - 8PM",
+            open: "11:00",
+            close: "20:00"
+        },
+        Thursday: {
+            hours: "11AM - 8PM",
+            open: "11:00",
+            close: "20:00"
+        },
+        Friday: {
+           hours: "11AM - 8PM",
+           open: "11:00",
+           close: "20:00"
+        },
+        Saturday: {
+            hours: "11AM - 8PM",
+            open: "11:00",
+            close: "20:00"
+        }
+    },
+    {
+        shopName:"Boba Knight",
+        lat: 38.86221024012838, 
+        lng: -77.2959162196095,
+        city: "Fairfax",
+        zip: "22030",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Monday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Tuesday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Wednesday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Thursday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Friday: {
+           hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
+        }
+    },
+    {
+        shopName:"Boba TomTom",
+        lat: 38.84843408498978,
+        lng: -77.30087692899075,
+        city: "Fairfax",
+        zip: "22030",
+        food: 'y',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "Closed for today",
+            open: "Closed for today",
+            close: "Closed for today"
+        },
+        Monday: {
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "10AM - 9:30PM",
+            open: "10:00",
+            close: "21:30"
+        },
+        Saturday: {
+            hours: "10AM - 9:30PM",
+            open: "10:00",
+            close: "21:30"
+        }
+    },
+    {
+        shopName:"Bobapop Tea Bar",
+        lat: 38.8737540086376,
+        lng: -77.225153162887,
+        city: "Falls Church",
+        zip: "22042",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
             close: "21:00"
         },
         Monday: {
@@ -273,188 +588,8 @@ let shops = [
             close: "22:00"
         },
         Saturday: {
-            hours: "12PM - 10PM",
-            open: "12:00",
-            close: "22:00"
-        }
-    },
-    {
-        shopName:"Ben Gong's Tea",
-        lat: 38.856461861476774, 
-        lng: -77.31560336595811,
-        city: "Fairfax",
-        zip: "22030",
-        food: 'n',
-        dessert: 'n',
-        games: 'n',
-        Sunday: {
-            hours: "11AM - 9PM",
+            hours: "11AM - 10PM",
             open: "11:00",
-            close: "21:00"
-        },
-        Monday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
-            close: "21:00"
-        },
-        Tuesday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
-            close: "21:00"
-        },
-        Wednesday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
-            close: "21:00"
-        },
-        Thursday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
-            close: "21:00"
-        },
-        Friday: {
-            hours: "11AM - 9:30PM",
-            open: "11:00",
-            close: "21:30"
-        },
-        Saturday: {
-            hours: "11AM - 9:30PM",
-            open: "11:00",
-            close: "21:30"
-        }
-    },
-    // { temporarily closed
-    //     shopName:"Boba Knight & Pho",
-    //     lat: 38.86221024012838, 
-    //     lng: -77.2959162196095,
-    //     city: "Fairfax",
-    //     zip: "22030",
-    //     food: 'y',
-    //     dessert: 'n',
-    //     games: 'n',
-    //     Sunday: {
-    //         hours: "12PM - 10PM",
-    //         open: "12:00",
-    //         close: "22:00"
-    //     },
-    //     Monday: {
-    //         hours: "12PM - 10PM",
-    //         open: "12:00",
-    //         close: "22:00"
-    //     },
-    //     Tuesday: {
-    //         hours: "Closed for today",
-    //         open: "Closed for today",
-    //         close: "Closed for today"
-    //     },
-    //     Wednesday: {
-    //         hours: "12PM - 10PM",
-    //         open: "12:00",
-    //         close: "22:00"
-    //     },
-    //     Thursday: {
-    //         hours: "12PM - 10PM",
-    //         open: "12:00",
-    //         close: "22:00"
-    //     },
-    //     Friday: {
-    //         hours: "12PM - 10:30PM",
-    //         open: "12:00",
-    //         close: "22:30"
-    //     },
-    //     Saturday: {
-    //         hours: "12PM - 10:30PM",
-    //         open: "12:00",
-    //         close: "22:30"
-    //     }
-    // },
-    {
-        shopName:"Boba TomTom",
-        lat: 38.84843408498978,
-        lng: -77.30087692899075,
-        city: "Fairfax",
-        zip: "22030",
-        food: 'y',
-        dessert: 'n',
-        games: 'n',
-        Sunday: {
-            hours: "Closed for today",
-            open: "Closed for today",
-            close: "Closed for today"
-        },
-        Monday: {
-            hours: "10AM - 10PM",
-            open: "10:00",
-            close: "22:00"
-        },
-        Tuesday: {
-            hours: "10AM - 10PM",
-            open: "10:00",
-            close: "22:00"
-        },
-        Wednesday: {
-            hours: "10AM - 10PM",
-            open: "10:00",
-            close: "22:00"
-        },
-        Thursday: {
-            hours: "10AM - 10PM",
-            open: "10:00",
-            close: "22:00"
-        },
-        Friday: {
-            hours: "10AM - 10PM",
-            open: "10:00",
-            close: "22:00"
-        },
-        Saturday: {
-            hours: "10AM - 10PM",
-            open: "10:00",
-            close: "22:00"
-        }
-    },
-    {
-        shopName:"Bobapop Tea Bar",
-        lat: 38.8737540086376,
-        lng: -77.225153162887,
-        city: "Falls Church",
-        zip: "22042",
-        food: 'n',
-        dessert: 'n',
-        games: 'n',
-        Sunday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Monday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Tuesday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Wednesday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Thursday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Friday: {
-            hours: "12PM - 10PM",
-            open: "12:00",
-            close: "22:00"
-        },
-        Saturday: {
-            hours: "12PM - 10PM",
-            open: "12:00",
             close: "22:00"
         }
     },
@@ -498,9 +633,9 @@ let shops = [
             close: "21:00"
         },
         Saturday: {
-            hours: "11AM - 10PM",
-            open: "11:00",
-            close: "22:00"
+            hours: "11:30AM - 9PM",
+            open: "11:30",
+            close: "21:00"
         }
     },
     {
@@ -738,38 +873,38 @@ let shops = [
         dessert: 'n',
         games: 'n',
         Sunday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
+            hours: "10AM - 9PM",
+            open: "10:00",
             close: "21:00"
         },
         Monday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
+            hours: "10AM - 9PM",
+            open: "10:00",
             close: "21:00"
         },
         Tuesday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
+            hours: "10AM - 9PM",
+            open: "10:00",
             close: "21:00"
         },
         Wednesday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
+            hours: "10AM - 9PM",
+            open: "10:00",
             close: "21:00"
         },
         Thursday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
+            hours: "10AM - 9PM",
+            open: "10:00",
             close: "21:00"
         },
         Friday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
+            hours: "10AM - 9PM",
+            open: "10:00",
             close: "21:00"
         },
         Saturday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
+            hours: "10AM - 9PM",
+            open: "10:00",
             close: "21:00"
         }
     },
@@ -864,51 +999,6 @@ let shops = [
         }
     },
     {
-        shopName:"Empress Pearl Milk Tea",
-        lat: 39.1377095843293,
-        lng: -77.703679644457,
-        city: "Purcellville",
-        zip: "20132",
-        food: 'n',
-        dessert: 'n',
-        games: 'n',
-        Sunday: {
-            hours: "12PM - 7PM",
-            open: "12:00",
-            close: "19:00"
-        },
-        Monday: {
-            hours: "12PM - 7PM",
-            open: "12:00",
-            close: "19:00"
-        },
-        Tuesday: {
-            hours: "12PM - 7PM",
-            open: "12:00",
-            close: "19:00"
-        },
-        Wednesday: {
-            hours: "12PM - 7PM",
-            open: "12:00",
-            close: "19:00"
-        },
-        Thursday: {
-            hours: "12PM - 7PM",
-            open: "12:00",
-            close: "19:00"
-        },
-        Friday: {
-            hours: "12PM - 8PM",
-            open: "12:00",
-            close: "20:00"
-        },
-        Saturday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
-        }
-    },
-    {
         shopName:"Goldmiss",
         lat: 38.85753279853386,
         lng: -77.33205028099414,
@@ -922,32 +1012,32 @@ let shops = [
             open: "11:00",
             close: "20:00"
         },
-        "Monday": {
+        Monday: {
             hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
-        "Tuesday": {
+        Tuesday: {
             hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
-        "Wednesday": {
+        Wednesday: {
             hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
-        "Thursday": {
+        Thursday: {
             hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
-        "Friday": {
+        Friday: {
             hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
         },
-        "Saturday": {
+        Saturday: {
             hours: "11AM - 8PM",
             open: "11:00",
             close: "20:00"
@@ -1043,51 +1133,6 @@ let shops = [
             close: "22:45"
         }
     },
-    // { temporarily closed
-    //     shopName:"Gong Cha",
-    //     lat: 38.8315102389412,
-    //     lng: -77.1970042806781,
-    //     city: "Annandale",
-    //     zip: "22003",
-    //     food: 'n',
-    //     dessert: 'y',
-    //     games: 'y',
-    //     Sunday: {
-    //         hours: "10AM - 9PM",
-    //         open: "10:00",
-    //         close: "21:00"
-    //     },
-    //     Monday: {
-    //         hours: "11AM - 9PM",
-    //         open: "11:00",
-    //         close: "21:00"
-    //     },
-    //     Tuesday: {
-    //         hours: "11AM - 9PM",
-    //         open: "11:00",
-    //         close: "21:00"
-    //     },
-    //     Wednesday: {
-    //         hours: "11AM - 9PM",
-    //         open: "11:00",
-    //         close: "21:00"
-    //     },
-    //     Thursday: {
-    //         hours: "11AM - 9PM",
-    //         open: "11:00",
-    //         close: "21:00"
-    //     },
-    //     Friday: {
-    //         hours: "11AM - 10PM",
-    //         open: "11:00",
-    //         close: "22:00"
-    //     },
-    //     Saturday: {
-    //         hours: "10AM - 10PM",
-    //         open: "10:00",
-    //         close: "22:00"
-    //     }
-    // },
     {
         shopName:"Gong Cha",
         lat: 38.8947072279681,
@@ -1148,24 +1193,24 @@ let shops = [
             close: "21:00"
         },
         Monday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:00"
         },
         Tuesday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:00"
         },
         Wednesday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:00"
         },
         Thursday: {
-            hours: "11AM - 8PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "20:00"
+            close: "21:00"
         },
         Friday: {
             hours: "11AM - 9PM",
@@ -1368,8 +1413,8 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "9:30AM - 9PM",
-            open: "09:30",
+            hours: "10AM - 9PM",
+            open: "10:00",
             close: "21:00"
         },
         Monday: {
@@ -1398,54 +1443,9 @@ let shops = [
             close: "21:00"
         },
         Saturday: {
-            hours: "9:30AM - 9PM",
-            open: "09:30",
+            hours: "10AM - 9PM",
+            open: "10:00",
             close: "21:00"
-        }
-    },
-    {
-        shopName:"iCream Yogurt & Crepes",
-        lat: 38.8725383897278, 
-        lng: -77.15312374108113,
-        city: "Falls Church",
-        zip: "22044",
-        food: 'y',
-        dessert: 'y',
-        games: 'n',
-        Sunday: {
-            hours: "11AM - 12AM",
-            open: "11:00",
-            close: "00:00"
-        },
-        Monday: {
-            hours: "11AM - 11PM",
-            open: "11:00",
-            close: "23:00"
-        },
-        Tuesday: {
-            hours: "11AM - 11PM",
-            open: "11:00",
-            close: "23:00"
-        },
-        Wednesday: {
-            hours: "Closed for today",
-            open: "Closed for today",
-            close: "Closed for today"
-        },
-        Thursday: {
-            hours: "11AM - 11PM",
-            open: "11:00",
-            close: "23:00"
-        },
-        Friday: {
-            hours: "11AM - 12AM",
-            open: "11:00",
-            close: "00:00"
-        },
-        Saturday: {
-            hours: "11AM - 12AM",
-            open: "11:00",
-            close: "00:00"
         }
     },
     {
@@ -1458,39 +1458,39 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10:30AM - 8:30PM",
+            open: "10:30",
+            close: "20:30"
         },
         Monday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10:30AM - 8:30PM",
+            open: "10:30",
+            close: "20:30"
         },
         Tuesday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10:30AM - 8:30PM",
+            open: "10:30",
+            close: "20:30"
         },
         Wednesday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10:30AM - 8:30PM",
+            open: "10:30",
+            close: "20:30"
         },
         Thursday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10:30AM - 8:30PM",
+            open: "10:30",
+            close: "20:30"
         },
         Friday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
-            close: "21:00"
+            hours: "10:30AM - 8:30PM",
+            open: "10:30",
+            close: "20:30"
         },
         Saturday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
-            close: "21:00"
+            hours: "10:30AM - 8:30PM",
+            open: "10:30",
+            close: "20:30"
         }
     },
     {
@@ -1585,6 +1585,51 @@ let shops = [
     },
     {
         shopName: "Java Loco Coffee & Bubble Tea",
+        lat: 38.848585648778915, 
+        lng: -77.05076614826471,
+        city: "Arlington",
+        zip: "22202",
+        food: 'y',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "Closed for Today",
+            open: "Closed for Today",
+            close: "Closed for Today"
+        },
+        Monday: {
+            hours: "6:30AM - 4PM",
+            open: "06:30",
+            close: "16:00"
+        },
+        Tuesday: {
+            hours: "6:30AM - 4PM",
+            open: "06:30",
+            close: "16:00"
+        },
+        Wednesday: {
+            hours: "6:30AM - 4PM",
+            open: "06:30",
+            close: "16:00"
+        },
+        Thursday: {
+            hours: "6:30AM - 4PM",
+            open: "06:30",
+            close: "16:00"
+        },
+        Friday: {
+            hours: "6:30AM - 4PM",
+            open: "06:30",
+            close: "16:00"
+        },
+        Saturday: {
+            hours: "Closed for Today",
+            open: "Closed for Today",
+            close: "Closed for Today"
+        }
+    },
+    {
+        shopName: "Java Loco Coffee & Bubble Tea",
         lat: 38.904580645757065,
         lng: -77.20402457892193,
         city: "Falls Church",
@@ -1593,9 +1638,9 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "8AM - 8PM",
+            hours: "8AM - 8:30PM",
             open: "08:00",
-            close: "20:00"
+            close: "20:30"
         },
         Monday: {
             hours: "7:30AM - 8:30PM",
@@ -1674,51 +1719,6 @@ let shops = [
         }
     },
     {
-        shopName:"Jireh Bakery Cafe",
-        lat: 38.839142208767,
-        lng: -77.4270263978817,
-        city: "Centreville",
-        zip: "20120",
-        food: 'y',
-        dessert: 'y',
-        games: 'n',
-        Sunday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
-        },
-        Monday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
-        },
-        Tuesday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
-        },
-        Wednesday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
-        },
-        Thursday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
-        },
-        Friday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
-        },
-        Saturday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
-        }
-    },
-    {
         shopName:"Koi Tea",
         lat: 38.4756220734579,
         lng: -77.4275221590502,
@@ -1778,28 +1778,28 @@ let shops = [
             close: "19:00"
         },
         Monday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
+            hours: "7:30AM - 8PM",
+            open: "07:30",
+            close: "20:00"
         },
         Tuesday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
+            hours: "7:30AM - 8PM",
+            open: "07:30",
+            close: "20:00"
         },
         Wednesday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
+            hours: "7:30AM - 8PM",
+            open: "07:30",
+            close: "20:00"
         },
         Thursday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
-            close: "21:00"
+            hours: "7:30AM - 8PM",
+            open: "07:30",
+            close: "20:00"
         },
         Friday: {
-            hours: "7AM - 9PM",
-            open: "07:00",
+            hours: "7:30AM - 9PM",
+            open: "07:30",
             close: "21:00"
         },
         Saturday: {
@@ -1824,32 +1824,77 @@ let shops = [
         },
         Monday: {
             hours: "11AM - 9PM",
-            open: "11:00",
+            open: "10:00",
             close: "21:00"
         },
         Tuesday: {
             hours: "11AM - 9PM",
-            open: "11:00",
+            open: "10:00",
             close: "21:00"
         },
         Wednesday: {
             hours: "11AM - 9PM",
-            open: "11:00",
+            open: "10:00",
             close: "21:00"
         },
         Thursday: {
             hours: "11AM - 9PM",
-            open: "11:00",
+            open: "10:00",
             close: "21:00"
         },
         Friday: {
             hours: "11AM - 9PM",
-            open: "11:00",
+            open: "10:00",
             close: "21:00"
         },
         Saturday: {
             hours: "11AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        }
+    },
+    {
+        shopName:"Kokee Tea",
+        lat: 38.81710887977289, 
+        lng: -77.27636270996418,
+        city: "Burke",
+        zip: "22032",
+        food: 'n',
+        dessert: 'y',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 8:30PM",
             open: "11:00",
+            close: "20:30"
+        },
+        Monday: {
+            hours: "11AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "11AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "11AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "11AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "11AM - 9PM",
+            open: "10:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "11AM - 9PM",
+            open: "10:00",
             close: "21:00"
         }
     },
@@ -1863,9 +1908,9 @@ let shops = [
         dessert: 'y',
         games: 'y',
         Sunday: {
-            hours: "11AM - 7PM",
+            hours: "11AM - 8PM",
             open: "11:00",
-            close: "19:00"
+            close: "20:00"
         },
         Monday: {
             hours: "11AM - 9PM",
@@ -1949,13 +1994,13 @@ let shops = [
         lng: -77.23392859358259,
         city: "Lorton",
         zip: "22079",
-        food: 'y',
+        food: 'n',
         dessert: 'y',
         games: 'y',
         Sunday: {
-            hours: "11AM - 9PM",
+            hours: "11AM - 8PM",
             open: "11:00",
-            close: "21:00"
+            close: "20:00"
         },
         Monday: {
             hours: "11AM - 9PM",
@@ -1998,39 +2043,39 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "11AM - 7PM",
-            open: "11:00",
+            hours: "10AM - 7PM",
+            open: "10:00",
             close: "19:00"
         },
         Monday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
         },
         Tuesday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
         },
         Wednesday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
         },
         Thursday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
         },
         Friday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
         },
         Saturday: {
-            hours: "11AM - 8PM",
-            open: "11:00",
-            close: "20:00"
+            hours: "10AM - 9PM",
+            open: "10:00",
+            close: "21:00"
         }
     },
     {
@@ -2088,8 +2133,8 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "11AM - 6PM",
-            open: "11:00",
+            hours: "10AM - 6PM",
+            open: "10:00",
             close: "18:00"
         },
         Monday: {
@@ -2133,8 +2178,8 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "10AM - 6PM",
-            open: "10:00",
+            hours: "11AM - 6PM",
+            open: "11:00",
             close: "18:00"
         },
         Monday: {
@@ -2283,8 +2328,8 @@ let shops = [
             close: "21:00"
         },
         Wednesday: {
-            hours: "11AM - 9PM",
-            open: "11:00",
+            hours: "12PM - 9PM",
+            open: "12:00",
             close: "21:00"
         },
         Thursday: {
@@ -2408,29 +2453,29 @@ let shops = [
             close: "22:00"
         },
         Monday: {
-            hours: "2PM - 8PM",
-            open: "14:00",
-            close: "20:00"
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
         },
         Tuesday: {
-            hours: "2PM - 8PM",
-            open: "14:00",
-            close: "20:00"
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
         },
         Wednesday: {
-            hours: "2PM - 8PM",
-            open: "14:00",
-            close: "20:00"
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
         },
         Thursday: {
-            hours: "2PM - 8PM",
-            open: "14:00",
-            close: "20:00"
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
         },
         Friday: {
-            hours: "2PM - 8PM",
-            open: "14:00",
-            close: "20:00"
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
         },
         Saturday: {
             hours: "12PM - 10PM",
@@ -2453,14 +2498,14 @@ let shops = [
             close: "22:00"
         },
         Monday: {
-            hours: "11AM - 10PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:00"
         },
         Tuesday: {
-            hours: "11AM - 10PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:00"
         },
         Wednesday: {
             hours: "11AM - 10PM",
@@ -2538,29 +2583,29 @@ let shops = [
         dessert: 'n',
         games: 'n',
         Sunday: {
-            hours: "11AM - 10PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:00"
         },
         Monday: {
-            hours: "11AM - 10PM",
+            hours: "11AM - 8PM",
             open: "11:00",
-            close: "22:00"
+            close: "20:00"
         },
         Tuesday: {
-            hours: "11AM - 10PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:00"
         },
         Wednesday: {
-            hours: "11AM - 10PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:00"
         },
         Thursday: {
-            hours: "11AM - 10PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:00"
         },
         Friday: {
             hours: "11AM - 10PM",
@@ -2608,14 +2653,14 @@ let shops = [
             close: "21:00"
         },
         Friday: {
-            hours: "11AM - 10PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:00"
         },
         Saturday: {
-            hours: "11AM - 10PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:00"
         }
     },
     {
@@ -2923,14 +2968,14 @@ let shops = [
             close: "22:00"
         },
         Friday: {
-            hours: "11AM - 11PM",
+            hours: "11AM - 10PM",
             open: "11:00",
-            close: "23:00"
+            close: "22:00"
         },
         Saturday: {
-            hours: "11AM - 11PM",
+            hours: "11AM - 10PM",
             open: "11:00",
-            close: "23:00"
+            close: "22:00"
         }
     },
     {
@@ -3033,39 +3078,39 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "11:30AM - 10PM",
+            hours: "12PM - 10:30PM",
             open: "11:30",
-            close: "22:00"
+            close: "22:30"
         },
         Monday: {
-            hours: "11:30AM - 10PM",
+            hours: "12PM - 10:30PM",
             open: "11:30",
-            close: "22:00"
+            close: "22:30"
         },
         Tuesday: {
-            hours: "11:30AM - 10PM",
+            hours: "12PM - 10:30PM",
             open: "11:30",
-            close: "22:00"
+            close: "22:30"
         },
         Wednesday: {
-            hours: "11:30AM - 10PM",
+            hours: "12PM - 10:30PM",
             open: "11:30",
-            close: "22:00"
+            close: "22:30"
         },
         Thursday: {
-            hours: "11:30AM - 10PM",
+            hours: "12PM - 10:30PM",
             open: "11:30",
-            close: "22:00"
+            close: "22:30"
         },
         Friday: {
-            hours: "11:30AM - 10:30PM",
-            open: "11:30",
-            close: "22:30"
+            hours: "12PM - 11PM",
+            open: "12:00",
+            close: "23:00"
         },
         Saturday: {
-            hours: "11:30AM - 10:30PM",
-            open: "11:30",
-            close: "22:30"
+            hours: "12PM - 11PM",
+            open: "12:00",
+            close: "23:00"
         }
     },
     { 
@@ -3204,96 +3249,6 @@ let shops = [
         }
     },
     {
-        shopName:"Moge Tee",
-        lat: 38.77421162038746, 
-        lng: -77.17052442380313,
-        city: "Springfield",
-        zip: "22150",
-        food: 'n',
-        dessert: 'n',
-        games: 'n',
-        Sunday: {
-            hours: "12PM - 9PMPM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Monday: {
-            hours: "12PM - 9:30PM",
-            open: "12:00",
-            close: "21:30"
-        },
-        Tuesday: {
-            hours: "12PM - 9PMPM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Wednesday: {
-            hours: "12PM - 9PMPM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Thursday: {
-            hours: "12PM - 9PMPM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Friday: {
-            hours: "12PM - 9PMPM",
-            open: "12:00",
-            close: "21:00"
-        },
-        Saturday: {
-            hours: "12PM - 9PMPM",
-            open: "12:00",
-            close: "21:00"
-        }
-    },
-    {
-        shopName:"Mr. Wish",
-        lat: 38.874082778522,
-        lng: -77.1548394299928,
-        city: "Falls Church",
-        zip: "22044",
-        food: 'n',
-        dessert: 'y',
-        games: 'n',
-        Sunday: {
-            hours: "10:30AM - 9PM",
-            open: "10:30",
-            close: "21:00"
-        },
-        Monday: {
-            hours: "10:30AM - 9PM",
-            open: "10:30",
-            close: "21:00"
-        },
-        Tuesday: {
-            hours: "10:30AM - 9PM",
-            open: "10:30",
-            close: "21:00"
-        },
-        Wednesday: {
-            hours: "10:30AM - 9PM",
-            open: "10:30",
-            close: "21:00"
-        },
-        Thursday: {
-            hours: "10:30AM - 9PM",
-            open: "10:30",
-            close: "21:00"
-        },
-        Friday: {
-            hours: "10:30AM - 9PM",
-            open: "10:30",
-            close: "21:00"
-        },
-        Saturday: {
-            hours: "10:30AM - 9PM",
-            open: "10:30",
-            close: "21:00"
-        }
-    },
-    {
         shopName:"Mr. Wish",
         lat: 38.9618777909721,
         lng: -77.4008801129001,
@@ -3303,38 +3258,38 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
+            hours: "11AM - 9PM",
+            open: "11:00",
             close: "21:00"
         },
         Monday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
+            hours: "11AM - 9PM",
+            open: "11:00",
             close: "21:00"
         },
         Tuesday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
+            hours: "11AM - 9PM",
+            open: "11:00",
             close: "21:00"
         },
         Wednesday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
+            hours: "11AM - 9PM",
+            open: "11:00",
             close: "21:00"
         },
         Thursday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
+            hours: "11AM - 9PM",
+            open: "11:00",
             close: "21:00"
         },
         Friday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
+            hours: "11AM - 9PM",
+            open: "11:00",
             close: "21:00"
         },
         Saturday: {
-            hours: "12PM - 9PM",
-            open: "12:00",
+            hours: "11AM - 9PM",
+            open: "11:00",
             close: "21:00"
         }
     },
@@ -3426,51 +3381,6 @@ let shops = [
             hours: "11AM - 10PM",
             open: "11:00",
             close: "22:00"
-        }
-    },
-    {
-        shopName:"Panda Tea House",
-        lat: 38.8629927097441,
-        lng: -77.0609751055611,
-        city: "Arlington",
-        zip: "22202",
-        food: 'n',
-        dessert: 'y',
-        games: 'n',
-        Sunday: {
-            hours: "11AM - 6PM",
-            open: "11:00",
-            close: "18:00"
-        },
-        Monday: {
-            hours: "10AM - 8PM",
-            open: "10:00",
-            close: "20:00"
-        },
-        Tuesday: {
-            hours: "10AM - 8PM",
-            open: "10:00",
-            close: "20:00"
-        },
-        Wednesday: {
-            hours: "10AM - 8PM",
-            open: "10:00",
-            close: "20:00"
-        },
-        Thursday: {
-            hours: "10AM - 8PM",
-            open: "10:00",
-            close: "20:00"
-        },
-        Friday: {
-            hours: "10AM - 9PM",
-            open: "10:00",
-            close: "21:00"
-        },
-        Saturday: {
-            hours: "10AM - 9PM",
-            open: "10:00",
-            close: "21:00"
         }
     },
     {
@@ -3699,6 +3609,51 @@ let shops = [
         }
     },
     {
+        shopName:"Shuyi Grass Jelly & Tea",
+        lat: 38.87007348625392, 
+        lng: -77.14536577646119,
+        city: "Falls Church",
+        zip: "22044",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Monday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Tuesday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Wednesday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Thursday: {
+            hours: "12PM - 9:30PM",
+            open: "12:00",
+            close: "21:30"
+        },
+        Friday: {
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
+        },
+        Saturday: {
+            hours: "12PM - 10PM",
+            open: "12:00",
+            close: "22:00"
+        }
+    },
+    {
         shopName:"Snocream Company",
         lat: 38.8313693814743,
         lng: -77.1882649765752,
@@ -3718,13 +3673,13 @@ let shops = [
             close: "22:00"
         },
         Tuesday: {
-            hours: "11:30AM - 10PM",
-            open: "11:30",
+            hours: "12PM - 10PM",
+            open: "12:00",
             close: "22:00"
         },
         Wednesday: {
-            hours: "11:30AM - 10PM",
-            open: "11:30",
+            hours: "12PM - 10PM",
+            open: "12:00",
             close: "22:00"
         },
         Thursday: {
@@ -3798,39 +3753,39 @@ let shops = [
         dessert: 'n',
         games: 'n',
         Sunday: {
-            hours: "11AM - 7PM",
+            hours: "11AM - 6PM",
             open: "11:00",
-            close: "19:00"
+            close: "18:00"
         },
         Monday: {
-            hours: "11AM - 7PM",
+            hours: "11AM - 8PM",
             open: "11:00",
-            close: "19:00"
+            close: "20:00"
         },
         Tuesday: {
-            hours: "11AM - 7PM",
+            hours: "11AM - 8PM",
             open: "11:00",
-            close: "19:00"
+            close: "20:00"
         },
         Wednesday: {
-            hours: "11AM - 7PM",
+            hours: "11AM - 8PM",
             open: "11:00",
-            close: "19:00"
+            close: "20:00"
         },
         Thursday: {
-            hours: "11AM - 7PM",
+            hours: "11AM - 8PM",
             open: "11:00",
-            close: "19:00"
+            close: "20:00"
         },
         Friday: {
-            hours: "11AM - 7PM",
+            hours: "11AM - 8PM",
             open: "11:00",
-            close: "19:00"
+            close: "20:00"
         },
         Saturday: {
-            hours: "11AM - 7PM",
+            hours: "11AM - 8PM",
             open: "11:00",
-            close: "19:00"
+            close: "20:00"
         }
     },
     {
@@ -4011,6 +3966,51 @@ let shops = [
             hours: "11AM - 1AM",
             open: "11:00",
             close: "01:00"
+        }
+    },
+    {
+        shopName:"Tea Do",
+        lat: 38.8722273653508, 
+        lng: -77.15260387922679,
+        city: "Falls Church",
+        zip: "22044",
+        food: 'y',
+        dessert: 'n',
+        games: 'y',
+        Sunday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Monday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Tuesday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Wednesday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Thursday: {
+            hours: "11AM - 11PM",
+            open: "11:00",
+            close: "23:00"
+        },
+        Friday: {
+            hours: "11AM - 12AM",
+            open: "11:00",
+            close: "00:00"
+        },
+        Saturday: {
+            hours: "11AM - 12AM",
+            open: "11:00",
+            close: "00:00"
         }
     },
     {
@@ -4338,38 +4338,38 @@ let shops = [
         dessert: 'y',
         games: 'y',
         Sunday: {
-            hours: "11AM - 1AM",
-            open: "11:00",
+            hours: "7:30AM - 1AM",
+            open: "07:30",
             close: "01:00"
         },
         Monday: {
-            hours: "11AM - 1AM",
-            open: "11:00",
+            hours: "7:30AM - 1AM",
+            open: "07:30",
             close: "01:00"
         },
         Tuesday: {
-            hours: "11AM - 1AM",
-            open: "11:00",
+            hours: "7:30AM - 1AM",
+            open: "07:30",
             close: "01:00"
         },
         Wednesday: {
-            hours: "11AM - 1AM",
-            open: "11:00",
+            hours: "7:30AM - 1AM",
+            open: "07:30",
             close: "01:00"
         },
         Thursday: {
-            hours: "11AM - 1AM",
-            open: "11:00",
+            hours: "7:30AM - 1AM",
+            open: "07:30",
             close: "01:00"
         },
         Friday: {
-            hours: "11AM - 1AM",
-            open: "11:00",
+            hours: "7:30AM - 1AM",
+            open: "07:30",
             close: "01:00"
         },
         Saturday: {
-            hours: "11AM - 1AM",
-            open: "11:00",
+            hours: "7:30AM - 1AM",
+            open: "07:30",
             close: "01:00"
         }
     },
@@ -4518,29 +4518,29 @@ let shops = [
         dessert: 'n',
         games: 'n',
         Sunday: {
-            hours: "12PM - 10PM",
+            hours: "12PM - 9:30PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:30"
         },
         Monday: {
-            hours: "12PM - 10PM",
+            hours: "12PM - 9:30PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:30"
         },
         Tuesday: {
-            hours: "12PM - 10PM",
+            hours: "12PM - 9:30PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:30"
         },
         Wednesday: {
-            hours: "12PM - 10PM",
+            hours: "12PM - 9:30PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:30"
         },
         Thursday: {
-            hours: "12PM - 10PM",
+            hours: "12PM - 9:30PM",
             open: "11:00",
-            close: "22:00"
+            close: "21:30"
         },
         Friday: {
             hours: "12PM - 11PM",
@@ -4563,29 +4563,29 @@ let shops = [
         dessert: 'y',
         games: 'n',
         Sunday: {
-            hours: "12PM - 11PM",
+            hours: "11AM - 9PM",
             open: "11:00",
-            close: "23:00"
+            close: "21:00"
         },
         Monday: {
-            hours: "12PM - 10PM",
-            open: "11:00",
-            close: "22:00"
+            hours: "3PM - 9PM",
+            open: "15:00",
+            close: "21:00"
         },
         Tuesday: {
-            hours: "12PM - 10PM",
-            open: "11:00",
-            close: "22:00"
+            hours: "3PM - 9PM",
+            open: "15:00",
+            close: "21:00"
         },
         Wednesday: {
-            hours: "12PM - 10PM",
-            open: "11:00",
-            close: "22:00"
+            hours: "3PM - 9PM",
+            open: "15:00",
+            close: "21:00"
         },
         Thursday: {
-            hours: "12PM - 10PM",
-            open: "11:00",
-            close: "22:00"
+            hours: "3PM - 9PM",
+            open: "15:00",
+            close: "21:00"
         },
         Friday: {
             hours: "12PM - 11PM",
@@ -4593,7 +4593,7 @@ let shops = [
             close: "23:00"
         },
         Saturday: {
-            hours: "12PM - 11PM",
+            hours: "11AM - 11PM",
             open: "11:00",
             close: "23:00"
         }
@@ -4768,9 +4768,9 @@ let shops = [
             close: "22:00"
         },
         Friday: {
-            hours: "10AM - 11PM",
-            open: "10:00",
-            close: "23:00"
+            hours: "11AM - 10PM",
+            open: "11:00",
+            close: "22:00"
         },
         Saturday: {
             hours: "11AM - 10PM",
@@ -4784,6 +4784,51 @@ let shops = [
         lng: -77.5047614576715,
         city: "Ashburn",
         zip: "20148",
+        food: 'n',
+        dessert: 'n',
+        games: 'n',
+        Sunday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Monday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Tuesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Wednesday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Thursday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Friday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        },
+        Saturday: {
+            hours: "11AM - 9PM",
+            open: "11:00",
+            close: "21:00"
+        }
+    },
+    {
+        shopName:"Y-Tea",
+        lat: 38.65908049983596, 
+        lng: -77.44003239018463,
+        city: "Manassas",
+        zip: "20112",
         food: 'n',
         dessert: 'n',
         games: 'n',
